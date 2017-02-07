@@ -198,6 +198,7 @@ CheckForMatch = function(user, pass, callback) {
 				userAndPasswordMatch = true;
 				funcDone = true;
 				console.log("i work");
+				callback.call(this);
 				return;
 				break;
 			}
@@ -208,17 +209,6 @@ CheckForMatch = function(user, pass, callback) {
 			charCount++;
 			userCount++;
 			
-		}
-		
-		if(userAndPasswordMatch || (usernameIsCorrect && passwordIsCorrect)) {
-			alert("true!");
-			funcDone = true;
-			userAndPasswordMatch = true;
-			return;
-		} else {
-			alert("false!");
-			funcDone = true;
-			return;
 		}
 		
 	});
