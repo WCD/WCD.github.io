@@ -85,7 +85,13 @@ function CheckForMatch(user, pass) {
 				selectedChar0 = checkData.charAt(i);
 				selectedChar1 = checkData.charAt(i + 1);
 				
-				username += checkData.charAt(i + userCount);
+				if(userCount == 0) {
+					username += checkData.charAt(i);
+				} else {
+					if(i != 0) {
+						username += checkData.charAt(i);
+					}
+				}
 				
 				if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
 					
