@@ -44,7 +44,7 @@ function AgreeAlert() {
 ** IS OWNED BY DIGIPEN AND IT IS ILLEGAL TO TAKE THESE FILES!
 **/
 
-var userAndPasswordMatch = false;
+var userAndPasswordMatch;
 var funcDone;
 
 function LoginPrompt() {
@@ -58,19 +58,15 @@ function LoginPrompt() {
 	console.log(username);
 	console.log(password);
 	
-	//$.when(CheckForMatch(username, password)).then(CheckLogin());
+	//$.when(CheckForMatch(username, password)).done(CheckLogin());
 	
-	//var chkForMatch = $.get("", (){
-		CheckForMatch(username, password);
-	//});
-	
-	$.when(funcDone).done(function() {
+	CheckForMatch(username, password, function() {
 		CheckLogin();
 	});
 	
 }
 
-function CheckLogin() {
+CheckLogin = function() {
 	
 	if(userAndPasswordMatch) {
 		alert("Access Granted!");
@@ -103,7 +99,7 @@ function EncryptText(input) {
 	
 }
 
-function CheckForMatch(user, pass) {
+CheckForMatch = function(user, pass, callback) {
 	
 	var fileLocation = "unsecure/usr/0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
 	var checkData;
@@ -226,7 +222,6 @@ function CheckForMatch(user, pass) {
 		}
 		
 	});
-	
 	
 }
 
