@@ -71,6 +71,7 @@ function CheckForMatch(user, pass) {
 		var username = "";
 		var password = "";
 		var charCount = 0;
+		var userCount = 0;
 		var selectedChar0 = "";
 		var selectedChar1 = "";
 		
