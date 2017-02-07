@@ -99,15 +99,15 @@ function EncryptText(input) {
 
 function CheckForMatch(user, pass) {
 	
-	var fileLocation = "unsecure/usr/0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
-	var checkData;
-	
-	jQuery.get(fileLocation, function(data) {
-		console.log(data);
-		checkData = data;
+	//jQuery.get(fileLocation, function(data) {
+	//	console.log(data);
+	//	checkData = data;
 		//process text file line by line
 		//$('#div').html(data.replace('n',''));
-	});
+	//});
+	
+	var fileLocation = "unsecure/usr/0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
+	var checkData = load(fileLocation);
 	
 	var username = "";
 	var password = "";
