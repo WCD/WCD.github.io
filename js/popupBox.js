@@ -60,6 +60,8 @@ function LoginPrompt() {
 	
 	$.when(CheckForMatch(username, password)).then(CheckLogin());
 	
+	alert(funcDone);
+	
 }
 
 function CheckLogin() {
@@ -99,7 +101,6 @@ function CheckForMatch(user, pass) {
 	
 	var fileLocation = "unsecure/usr/0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
 	
-	while(!funcDone) {
 		jQuery.get(fileLocation, function(data) {
 			console.log(data);
 			//process text file line by line
@@ -284,3 +285,8 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
+
+
+
+
+
