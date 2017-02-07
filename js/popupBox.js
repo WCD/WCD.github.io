@@ -85,7 +85,7 @@ function CheckForMatch(user, pass) {
 				selectedChar0 = checkData.charAt(i);
 				selectedChar1 = checkData.charAt(i + 1);
 				
-				username += checkData.charAt(i);
+				username += checkData.charAt(i + userCount);
 				
 				if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
 					
@@ -130,7 +130,7 @@ function CheckForMatch(user, pass) {
 						console.log("Error: Check Failed!");
 					}
 					
-					charCount = i + 2;
+					charCount = i + 1;
 					
 					break;
 					
@@ -141,7 +141,6 @@ function CheckForMatch(user, pass) {
 			username = "";
 			password = "";
 			
-			charCount++;
 			userCount++;
 			
 		}
