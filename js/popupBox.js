@@ -88,7 +88,7 @@ function CheckForMatch(user, pass) {
 				if(userCount == 0) {
 					username += checkData.charAt(i);
 				} else {
-					if(i != 0) {
+					if(i != charCount) {
 						username += checkData.charAt(i);
 					}
 				}
@@ -146,6 +146,7 @@ function CheckForMatch(user, pass) {
 			
 			username = "";
 			password = "";
+			
 			
 			userCount++;
 			
