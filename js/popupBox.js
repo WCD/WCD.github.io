@@ -45,7 +45,6 @@ function AgreeAlert() {
 **/
 
 var userAndPasswordMatch = false;
-var usrnameFuncFinished = false;
 
 function LoginPrompt() {
 	
@@ -58,7 +57,7 @@ function LoginPrompt() {
 	console.log(username);
 	console.log(password);
 	
-	userAndPasswordMatch = CheckForMatch(username, password);
+	CheckForMatch(username, password);
 	
 	if(userAndPasswordMatch) {
 		alert("Access Granted!");
@@ -66,6 +65,30 @@ function LoginPrompt() {
 	} else {
 		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
 		return false;
+	}
+	
+}
+
+function EncryptText(input) {
+	
+	//var strVal = $('#txtValue').val();
+	//dvValue
+	
+	if(input.length == 0) {
+		alert("That's not how it works...");
+	} else {
+		
+		var strMD5 = $().crypt({
+			method: "md5",
+			source: input
+		});
+		
+		var keyword = window.prompt("Enter Keyword");
+		
+		//$('#dvValue').html("MD5 string of <b>" + input + "</b> is <b>" + strMD5 + "</b>");
+		
+		return KeywordEncrypt(strMD5, keyword);
+		
 	}
 	
 }
@@ -91,6 +114,9 @@ function CheckForMatch(user, pass) {
 		
 		while(userCount < 2) {
 			
+			usernameIsCorrect = false;
+			passwordIsCorrect = false;
+			
 			for(var i = charCount; i < checkData.toString().length; i++) {
 				
 				var selectedChar2 = checkData.charAt(i + 2);
@@ -115,11 +141,9 @@ function CheckForMatch(user, pass) {
 					} else if(username != user) {
 						console.log("Username Invalid!");
 						usernameIsCorrect = false;
-						passwordIsCorrect = false;
 					} else {
 						console.log("Error: Check Failed!");
 						usernameIsCorrect = false;
-						passwordIsCorrect = false;
 					}
 					
 					break;
@@ -146,11 +170,9 @@ function CheckForMatch(user, pass) {
 						passwordIsCorrect = true;
 					} else if(password != pass) {
 						console.log("Password Invalid!");
-						usernameIsCorrect = false;
 						passwordIsCorrect = false;
 					} else {
 						console.log("Error: Check Failed!");
-						usernameIsCorrect = false;
 						passwordIsCorrect = false;
 					}
 					
@@ -162,6 +184,11 @@ function CheckForMatch(user, pass) {
 				
 			}
 			
+			if(usernameIsCorrect && passwordIsCorrect) {
+				userAndPasswordMatch = true;
+				break;
+			}
+			
 			username = "";
 			password = "";
 			
@@ -170,31 +197,15 @@ function CheckForMatch(user, pass) {
 			
 		}
 		
+		if(userAndPasswordMatch) {
+			alert("success!");
+			return;
+		} else {
+			alert(":(");
+			return;
+		}
+		
 	});
-	
-}
-
-function EncryptText(input) {
-	
-	//var strVal = $('#txtValue').val();
-	//dvValue
-	
-	if(input.length == 0) {
-		alert("That's not how it works...");
-	} else {
-		
-		var strMD5 = $().crypt({
-			method: "md5",
-			source: input
-		});
-		
-		var keyword = window.prompt("Enter Keyword");
-		
-		//$('#dvValue').html("MD5 string of <b>" + input + "</b> is <b>" + strMD5 + "</b>");
-		
-		return KeywordEncrypt(strMD5, keyword);
-		
-	}
 	
 }
 
