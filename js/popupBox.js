@@ -68,8 +68,8 @@ function CheckForMatch(user, pass) {
 		//$('#div').html(data.replace('n',''));
 		
 		var checkData = data;
-		var username = "undefined";
-		var password = "undefined";
+		var username = "";
+		var password = "";
 		
 		for(var i = 0; i < checkData.toString().length; i++) {
 			
@@ -77,7 +77,7 @@ function CheckForMatch(user, pass) {
 			var selectedChar2 = checkData.charAt(i + 2);
 			var selectedChar3 = checkData.charAt(i + 3);
 			
-			username += selectedChar1;
+			username += checkData.charAt(i);
 			
 			if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
 				
