@@ -196,10 +196,10 @@ function CheckForMatch(user, pass) {
 		}
 		
 		if(userAndPasswordMatch) {
-			alert("success!");
+			break;
 			return;
 		} else {
-			alert(":(");
+			break;
 			return;
 		}
 		
@@ -277,8 +277,3 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
-
-
-
-
-
