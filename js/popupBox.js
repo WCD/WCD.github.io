@@ -73,15 +73,29 @@ function CheckForMatch(user, pass) {
 		
 		for(var i = 0; i < checkData.toString().length; i++) {
 			
-			var selectedChar1 = checkData.charAt(i);
-			var selectedChar2 = checkData.charAt(i + 1);
-			var selectedChar3 = checkData.charAt(i + 2);
+			var selectedChar1 = checkData.charAt(i + 1);
+			var selectedChar2 = checkData.charAt(i + 2);
+			var selectedChar3 = checkData.charAt(i + 3);
+			
+			username += selectedChar1;
 			
 			if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
+				
 				alert(selectedChar1);
 				alert(selectedChar2);
 				alert(selectedChar3);
-				return;
+				
+				alert(username);
+				
+				if(username == user) {
+					alert("Username Match!");
+				} else if() {
+					alert("Username Invalid!");
+				} else {
+					alert("Error: Check Failed!");
+				}
+				
+				break;
 			}
 			
 		}
