@@ -130,7 +130,7 @@ function CheckForMatch(user, pass) {
 						console.log("Error: Check Failed!");
 					}
 					
-					charCount = i + 1;
+					charCount = i + 2;
 					
 					break;
 					
@@ -141,7 +141,6 @@ function CheckForMatch(user, pass) {
 			username = "";
 			password = "";
 			
-			charCount++;
 			charCount++;
 			userCount++;
 			
