@@ -70,12 +70,14 @@ function CheckForMatch(user, pass) {
 		var checkData = data;
 		var username = "";
 		var password = "";
+		var selectedCharPasswordBegin = 0;
 		
 		for(var i = 0; i < checkData.toString().length; i++) {
 			
 			var selectedChar1 = checkData.charAt(i + 1);
 			var selectedChar2 = checkData.charAt(i + 2);
 			var selectedChar3 = checkData.charAt(i + 3);
+			selectedCharPasswordBegin = checkData.charAt(i + 4);
 			
 			username += checkData.charAt(i);
 			
@@ -91,6 +93,32 @@ function CheckForMatch(user, pass) {
 					console.log("Username Match!");
 				} else if(username != user) {
 					console.log("Username Invalid!");
+				} else {
+					console.log("Error: Check Failed!");
+				}
+				
+				break;
+				
+			}
+			
+		}
+		
+		for(var i = selectedCharPasswordBegin; i < checkData.toString().length; i++) {
+			
+			var selectedChar1 = checkData.charAt(i + 1);
+			
+			password += checkData.charAt(i);
+			
+			if(selectedChar1 == "]") {
+				
+				console.log(selectedChar1);
+				
+				console.log(password);
+				
+				if(password == pass) {
+					console.log("Password Match!");
+				} else if(password != pass) {
+					console.log("Password Invalid!");
 				} else {
 					console.log("Error: Check Failed!");
 				}
