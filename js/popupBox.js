@@ -71,7 +71,7 @@ function CheckForMatch(user, pass) {
 		var username = "undefined";
 		var password = "undefined";
 		
-		for(var i = 0; i < checkData.toString().length(); i++) {
+		for(var i = 0; i < checkData.toString().length; i++) {
 			
 			var selectedChar1 = checkData.charAt(i);
 			var selectedChar2 = checkData.charAt(i + 1);
