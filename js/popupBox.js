@@ -151,14 +151,14 @@ function CheckForMatch(user, pass) {
 					
 					charCount = i + 1;
 					
-					if(usernameIsCorrect && passwordIsCorrect) {
-						return true;
-					}
-					
 					break;
 					
 				}
 				
+			}
+			
+			if(usernameIsCorrect && passwordIsCorrect) {
+				return true;
 			}
 			
 			username = "";
