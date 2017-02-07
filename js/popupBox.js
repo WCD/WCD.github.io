@@ -203,11 +203,11 @@ function CheckForMatch(user, pass) {
 			if(userAndPasswordMatch) {
 				alert("true!");
 				funcDone = true;
-				return true;
+				return;
 			} else {
 				alert("false!");
 				funcDone = true;
-				return false;
+				return;
 			}
 			
 		});
@@ -215,10 +215,10 @@ function CheckForMatch(user, pass) {
 	
 	if(userAndPasswordMatch) {
 		alert("success!");
-		return true;
+		return;
 	} else {
 		alert(":(");
-		return false;
+		return;
 	}
 	
 }
