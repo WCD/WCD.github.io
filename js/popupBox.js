@@ -89,7 +89,7 @@ function CheckForMatch(user, pass) {
 				
 				if(username == user) {
 					alert("Username Match!");
-				} else if() {
+				} else if(username != user) {
 					alert("Username Invalid!");
 				} else {
 					alert("Error: Check Failed!");
