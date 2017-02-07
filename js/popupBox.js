@@ -58,14 +58,32 @@ function LoginPrompt() {
 	
 }
 
-function CheckForMatch(user, pass) {
+function CheckForMatch(user) {
 	
 	var fileLocation = "unsecure/usr/0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
 	
 	jQuery.get(fileLocation, function(data) {
 		alert(data);
 		//process text file line by line
-		$('#div').html(data.replace('n',''));
+		//$('#div').html(data.replace('n',''));
+		
+		var checkData = data;
+		var username = "undefined";
+		var password = "undefined";
+		
+		for(var i = 0; i < checkData.length(); i++) {
+			
+			var selectedChar1 = checkData.charAt(i);
+			var selectedChar2 = checkData.charAt(i + 1);
+			var selectedChar3 = checkData.charAt(i + 2);
+			
+			if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
+				alert(selectedChar1);
+				return;
+			}
+			
+		}
+		
 	});
 	
 }
