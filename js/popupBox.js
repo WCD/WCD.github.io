@@ -74,7 +74,7 @@ function CheckForMatch(user, pass) {
 		var selectedChar0 = 0;
 		var selectedChar1 = 0;
 		
-		while(selectedChar0 != null) {
+		while(selectedChar0 != null || charCount <= checkData.toString().length) {
 			
 			for(var i = charCount; i < checkData.toString().length; i++) {
 				
