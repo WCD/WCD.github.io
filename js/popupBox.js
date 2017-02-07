@@ -55,7 +55,13 @@ function LoginPrompt() {
 	console.log(username);
 	console.log(password);
 	
-	CheckForMatch(username, password);
+	userAndPasswordMatch = CheckForMatch(username, password);
+	
+	if(userAndPasswordMatch) {
+		alert("Access Granted!");
+	} else {
+		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
+	}
 	
 }
 
@@ -255,3 +261,8 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
+
+
+
+
+
