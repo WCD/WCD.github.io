@@ -45,7 +45,7 @@ function AgreeAlert() {
 **/
 
 var userAndPasswordMatch = false;
-var funcDone = false;
+var funcDone;
 
 function LoginPrompt() {
 	
@@ -200,6 +200,10 @@ function CheckForMatch(user, pass) {
 			
 			if(usernameIsCorrect && passwordIsCorrect) {
 				userAndPasswordMatch = true;
+				funcDone = true;
+				console.log("i work");
+				return;
+				break;
 			}
 			
 			username = "";
@@ -210,9 +214,10 @@ function CheckForMatch(user, pass) {
 			
 		}
 		
-		if(userAndPasswordMatch) {
+		if(userAndPasswordMatch || (usernameIsCorrect && passwordIsCorrect)) {
 			alert("true!");
 			funcDone = true;
+			userAndPasswordMatch = true;
 			return;
 		} else {
 			alert("false!");
@@ -287,3 +292,8 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
+
+
+
+
+
