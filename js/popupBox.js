@@ -70,60 +70,72 @@ function CheckForMatch(user, pass) {
 		var checkData = data;
 		var username = "";
 		var password = "";
+		var charCount = 0;
+		var selectedChar0 = checkData.charAt(i);
+		var selectedChar1 = checkData.charAt(i + 1);
 		
-		for(var i = 0; i < checkData.toString().length; i++) {
+		while(selectedChar != null) {
 			
-			var selectedChar1 = checkData.charAt(i + 1);
-			var selectedChar2 = checkData.charAt(i + 2);
-			var selectedChar3 = checkData.charAt(i + 3);
-			
-			username += checkData.charAt(i);
-			
-			if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
+			for(var i = 0 * charCount; i < checkData.toString().length; i++) {
 				
-				console.log(selectedChar1);
-				console.log(selectedChar2);
-				console.log(selectedChar3);
+				var selectedChar2 = checkData.charAt(i + 2);
+				var selectedChar3 = checkData.charAt(i + 3);
 				
-				console.log(username);
+				selectedChar0 = checkData.charAt(i);
 				
-				if(username == user) {
-					console.log("Username Match!");
-				} else if(username != user) {
-					console.log("Username Invalid!");
-				} else {
-					console.log("Error: Check Failed!");
+				username += checkData.charAt(i);
+				
+				if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
+					
+					console.log(selectedChar1);
+					console.log(selectedChar2);
+					console.log(selectedChar3);
+					
+					console.log(username);
+					
+					if(username == user) {
+						console.log("Username Match!");
+					} else if(username != user) {
+						console.log("Username Invalid!");
+					} else {
+						console.log("Error: Check Failed!");
+					}
+					
+					break;
+					
 				}
-				
-				break;
 				
 			}
 			
-		}
-		
-		for(var i = username.length + 3; i < checkData.toString().length; i++) {
-			
-			var selectedChar1 = checkData.charAt(i + 1);
-			
-			password += checkData.charAt(i);
-			
-			if(selectedChar1 == "]") {
+			for(var i = charCount + username.length + 3; i < checkData.toString().length; i++) {
 				
-				console.log(selectedChar1);
+				selectedChar0 = checkData.charAt(i);
 				
-				console.log(password);
+				password += checkData.charAt(i);
 				
-				if(password == pass) {
-					console.log("Password Match!");
-				} else if(password != pass) {
-					console.log("Password Invalid!");
-				} else {
-					console.log("Error: Check Failed!");
+				if(selectedChar1 == "]") {
+					
+					console.log(selectedChar1);
+					
+					console.log(password);
+					
+					if(password == pass) {
+						console.log("Password Match!");
+					} else if(password != pass) {
+						console.log("Password Invalid!");
+					} else {
+						console.log("Error: Check Failed!");
+					}
+					
+					break;
+					
 				}
 				
-				break;
-				
 			}
+			
+			username = "";
+			password = "";
+			charCount = selectedChar0 + 1;
 			
 		}
 		
