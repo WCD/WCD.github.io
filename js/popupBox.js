@@ -141,6 +141,7 @@ function CheckForMatch(user, pass) {
 			username = "";
 			password = "";
 			
+			charCount++;
 			userCount++;
 			
 		}
