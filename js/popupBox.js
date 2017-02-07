@@ -54,11 +54,11 @@ function LoginPrompt() {
 	console.log(username);
 	console.log(password);
 	
-	CheckForMatch(username);
+	CheckForMatch(username, password);
 	
 }
 
-function CheckForMatch(user) {
+function CheckForMatch(user, pass) {
 	
 	var fileLocation = "unsecure/usr/0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
 	
@@ -71,7 +71,7 @@ function CheckForMatch(user) {
 		var username = "undefined";
 		var password = "undefined";
 		
-		for(var i = 0; i < checkData.length(); i++) {
+		for(var i = 0; i < checkData.toString().length(); i++) {
 			
 			var selectedChar1 = checkData.charAt(i);
 			var selectedChar2 = checkData.charAt(i + 1);
