@@ -47,6 +47,7 @@ function LoginPrompt() {
 	
 	var username = window.prompt("Username");
 	var password = window.prompt("Password");
+	var userAndPasswordMatch = false;
 	
 	username = EncryptText(username);
 	password = EncryptText(password);
@@ -70,6 +71,8 @@ function CheckForMatch(user, pass) {
 		var checkData = data;
 		var username = "";
 		var password = "";
+		var usernameIsCorrect = false;
+		var passwordIsCorrect = false;
 		var charCount = 0;
 		var userCount = 0;
 		var selectedChar0 = "";
@@ -97,10 +100,15 @@ function CheckForMatch(user, pass) {
 					
 					if(username == user) {
 						console.log("Username Match!");
+						usernameIsCorrect = true;
 					} else if(username != user) {
 						console.log("Username Invalid!");
+						usernameIsCorrect = false;
+						passwordIsCorrect = false;
 					} else {
 						console.log("Error: Check Failed!");
+						usernameIsCorrect = false;
+						passwordIsCorrect = false;
 					}
 					
 					break;
@@ -124,10 +132,15 @@ function CheckForMatch(user, pass) {
 					
 					if(password == pass) {
 						console.log("Password Match!");
+						passwordIsCorrect = true;
 					} else if(password != pass) {
 						console.log("Password Invalid!");
+						usernameIsCorrect = false;
+						passwordIsCorrect = false;
 					} else {
 						console.log("Error: Check Failed!");
+						usernameIsCorrect = false;
+						passwordIsCorrect = false;
 					}
 					
 					charCount = i + 1;
@@ -144,6 +157,12 @@ function CheckForMatch(user, pass) {
 			charCount++;
 			userCount++;
 			
+		}
+		
+		if(usernameIsCorrect && passwordIsCorrect) {
+			return true;
+		} else {
+			return false;
 		}
 		
 	});
@@ -236,8 +255,3 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
-
-
-
-
-
