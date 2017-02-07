@@ -101,7 +101,7 @@ function CheckForMatch(user, pass) {
 			
 		}
 		
-		for(var i = username.length + 4; i < checkData.toString().length; i++) {
+		for(var i = username.length + 3; i < checkData.toString().length; i++) {
 			
 			var selectedChar1 = checkData.charAt(i + 1);
 			
@@ -217,3 +217,8 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
+
+
+
+
+
