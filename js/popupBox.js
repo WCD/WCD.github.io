@@ -215,10 +215,8 @@ function CheckForMatch(user, pass) {
 	
 	if(userAndPasswordMatch) {
 		alert("success!");
-		return;
 	} else {
 		alert(":(");
-		return;
 	}
 	
 }
