@@ -45,6 +45,7 @@ function AgreeAlert() {
 **/
 
 var userAndPasswordMatch = false;
+var usrnameFuncFinished = false;
 
 function LoginPrompt() {
 	
@@ -59,10 +60,12 @@ function LoginPrompt() {
 	
 	CheckForMatch(username, password);
 	
+	if(usrnameFuncFinished) {
 	if(userAndPasswordMatch) {
 		alert("Access Granted!");
 	} else {
 		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
+	}
 	}
 	
 }
@@ -173,6 +176,7 @@ function CheckForMatch(user, pass) {
 		
 		if(usernameIsCorrect && passwordIsCorrect) {
 			userAndPasswordMatch = true;
+			usrnameFuncFinished = true;
 			return;
 		} else {
 			userAndPasswordMatch = false;
