@@ -159,8 +159,6 @@ function CheckForMatch(user, pass) {
 			
 			if(usernameIsCorrect && passwordIsCorrect) {
 				return true;
-			} else {
-				return false;
 			}
 			
 			username = "";
@@ -169,6 +167,12 @@ function CheckForMatch(user, pass) {
 			charCount++;
 			userCount++;
 			
+		}
+		
+		if(usernameIsCorrect && passwordIsCorrect) {
+			return true;
+		} else {
+			return false;
 		}
 		
 	});
