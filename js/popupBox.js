@@ -54,7 +54,7 @@ function LoginPrompt() {
 	console.log(username);
 	console.log(password);
 	
-	CheckForMatch(username, password);
+	CheckForMatch(username);
 	
 }
 
