@@ -60,14 +60,6 @@ function LoginPrompt() {
 	
 	CheckForMatch(username, password);
 	
-	if(usrnameFuncFinished) {
-		if(userAndPasswordMatch) {
-			alert("Access Granted!");
-		} else {
-			alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
-		}
-	}
-	
 }
 
 function CheckForMatch(user, pass) {
@@ -184,6 +176,14 @@ function CheckForMatch(user, pass) {
 		
 	});
 	
+	if(usrnameFuncFinished) {
+		if(userAndPasswordMatch) {
+			alert("Access Granted!");
+		} else {
+			alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
+		}
+	}
+	
 }
 
 function EncryptText(input) {
@@ -272,8 +272,3 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
-
-
-
-
-
