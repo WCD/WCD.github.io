@@ -60,7 +60,7 @@ function LoginPrompt() {
 
 function CheckForMatch(user, pass) {
 	
-	var fileLocation = "unsecure\usr\0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
+	var fileLocation = "unsecure/usr/0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
 	
 	jQuery.get(fileLocation, function(data) {
 		alert(data);
