@@ -4,7 +4,7 @@ $('.agree-link').click(function() {
             //localStorage.WCDUserHasAgreedToTerms = Number(localStorage.WCDUserHasAgreedToTerms)+1;
 			
 			if(localStorage.WCDUserHasAgreedToTerms == 1) {
-				LoginPrompt();
+				CheckLogin();
 			} else if(localStorage.WCDUserHasAgreedToTerms == 0) {
 				AgreeAlert();
 			} else if(localStorage.WCDUserHasAgreedToTerms != 0 || localStorage.WCDUserHasAgreedToTerms != 1) {
@@ -31,7 +31,7 @@ function AgreeAlert() {
 	
 	if(agreePopup.toLowerCase() == "i agree") {
 		localStorage.WCDUserHasAgreedToTerms = 1;
-		LoginPrompt();
+		CheckLogin();
 	} else {
 		localStorage.WCDUserHasAgreedToTerms = 0;
 	}
@@ -46,6 +46,17 @@ function AgreeAlert() {
 
 var userAndPasswordMatch = false;
 
+function CheckLogin() {
+	
+	LoginPrompt();
+	
+	if(userAndPasswordMatch) {
+		alert("Access Granted!");
+	} else {
+		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
+	}
+}
+
 function LoginPrompt() {
 	
 	var username = window.prompt("Username");
@@ -58,12 +69,6 @@ function LoginPrompt() {
 	console.log(password);
 	
 	CheckForMatch(username, password);
-	
-	if(userAndPasswordMatch) {
-		alert("Access Granted!");
-	} else {
-		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
-	}
 	
 }
 
