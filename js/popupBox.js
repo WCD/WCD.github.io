@@ -173,6 +173,7 @@ function CheckForMatch(user, pass) {
 		
 		if(usernameIsCorrect && passwordIsCorrect) {
 			userAndPasswordMatch = true;
+			return;
 		} else {
 			userAndPasswordMatch = false;
 		}
