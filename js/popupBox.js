@@ -43,11 +43,13 @@ function AgreeAlert() {
 ** SINCE THEY WILL EXPECT THIS TO BE SECURE. WE ARE HOPING THAT THE FEW WHO SEE THIS WON'T TRY TO EXPLOIT THIS. AGAIN, EVERYTHING THAT IS PASSWORD PROTECTED
 ** IS OWNED BY DIGIPEN AND IT IS ILLEGAL TO TAKE THESE FILES!
 **/
+
+var userAndPasswordMatch = false;
+
 function LoginPrompt() {
 	
 	var username = window.prompt("Username");
 	var password = window.prompt("Password");
-	var userAndPasswordMatch = false;
 	
 	username = EncryptText(username);
 	password = EncryptText(password);
@@ -55,7 +57,7 @@ function LoginPrompt() {
 	console.log(username);
 	console.log(password);
 	
-	userAndPasswordMatch = CheckForMatch(username, password);
+	CheckForMatch(username, password);
 	
 	if(userAndPasswordMatch) {
 		alert("Access Granted!");
@@ -157,12 +159,12 @@ function CheckForMatch(user, pass) {
 				
 			}
 			
-			if(usernameIsCorrect && passwordIsCorrect) {
-				return true;
-			}
-			
 			username = "";
 			password = "";
+			
+			if(usernameIsCorrect && passwordIsCorrect) {
+				break;
+			}
 			
 			charCount++;
 			userCount++;
@@ -170,9 +172,9 @@ function CheckForMatch(user, pass) {
 		}
 		
 		if(usernameIsCorrect && passwordIsCorrect) {
-			return true;
+			userAndPasswordMatch = true;
 		} else {
-			return false;
+			userAndPasswordMatch = false;
 		}
 		
 	});
