@@ -61,11 +61,11 @@ function LoginPrompt() {
 	CheckForMatch(username, password);
 	
 	if(usrnameFuncFinished) {
-	if(userAndPasswordMatch) {
-		alert("Access Granted!");
-	} else {
-		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
-	}
+		if(userAndPasswordMatch) {
+			alert("Access Granted!");
+		} else {
+			alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
+		}
 	}
 	
 }
