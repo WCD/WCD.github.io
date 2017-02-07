@@ -184,7 +184,7 @@ function CheckForMatch(user, pass) {
 			
 			if(usernameIsCorrect && passwordIsCorrect) {
 				userAndPasswordMatch = true;
-				break;
+				return true;
 			}
 			
 			username = "";
@@ -277,3 +277,8 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
+
+
+
+
+
