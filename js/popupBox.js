@@ -85,13 +85,7 @@ function CheckForMatch(user, pass) {
 				selectedChar0 = checkData.charAt(i);
 				selectedChar1 = checkData.charAt(i + 1);
 				
-				if(userCount == 0) {
-					username += checkData.charAt(i);
-				} else {
-					if(i != charCount && i != charCount + 1) {
-						username += checkData.charAt(i);
-					}
-				}
+				username += checkData.charAt(i);
 				
 				if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
 					
@@ -242,3 +236,8 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
+
+
+
+
+
