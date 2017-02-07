@@ -157,18 +157,18 @@ function CheckForMatch(user, pass) {
 				
 			}
 			
+			if(usernameIsCorrect && passwordIsCorrect) {
+				return true;
+			} else {
+				return false;
+			}
+			
 			username = "";
 			password = "";
 			
 			charCount++;
 			userCount++;
 			
-		}
-		
-		if(usernameIsCorrect && passwordIsCorrect) {
-			return true;
-		} else {
-			return false;
 		}
 		
 	});
