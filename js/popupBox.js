@@ -58,9 +58,15 @@ function LoginPrompt() {
 	console.log(username);
 	console.log(password);
 	
-	$.when(CheckForMatch(username, password)).then(CheckLogin());
+	//$.when(CheckForMatch(username, password)).then(CheckLogin());
 	
-	alert(funcDone);
+	var chkForMatch = $.get(funcDone, function(data) {
+		CheckForMatch(username, password);
+	});
+	
+	$.when(chkForMatch).done(function() {
+		CheckLogin();
+	});
 	
 }
 
@@ -281,8 +287,3 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
-
-
-
-
-
