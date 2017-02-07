@@ -79,6 +79,8 @@ function CheckForMatch(user, pass) {
 			
 			if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
 				alert(selectedChar1);
+				alert(selectedChar2);
+				alert(selectedChar3);
 				return;
 			}
 			
