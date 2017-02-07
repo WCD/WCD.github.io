@@ -60,7 +60,7 @@ function LoginPrompt() {
 	
 	//$.when(CheckForMatch(username, password)).then(CheckLogin());
 	
-	var chkForMatch = $.get(funcDone, function(data) {
+	var chkForMatch = $.get(function() {
 		CheckForMatch(username, password);
 	});
 	
