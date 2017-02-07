@@ -124,6 +124,7 @@ function CheckForMatch(user, pass) {
 				}
 				
 				break;
+				
 			}
 			
 		}
