@@ -71,8 +71,8 @@ function CheckForMatch(user, pass) {
 		var username = "";
 		var password = "";
 		var charCount = 0;
-		var selectedChar0 = checkData.charAt(i);
-		var selectedChar1 = checkData.charAt(i + 1);
+		var selectedChar0 = 0;
+		var selectedChar1 = 0;
 		
 		while(selectedChar0 != null) {
 			
@@ -82,6 +82,7 @@ function CheckForMatch(user, pass) {
 				var selectedChar3 = checkData.charAt(i + 3);
 				
 				selectedChar0 = checkData.charAt(i);
+				selectedChar1 = checkData.charAt(i + 1);
 				
 				username += checkData.charAt(i);
 				
@@ -110,6 +111,7 @@ function CheckForMatch(user, pass) {
 			for(var i = charCount + username.length + 3; i < checkData.toString().length; i++) {
 				
 				selectedChar0 = checkData.charAt(i);
+				selectedChar1 = checkData.charAt(i + 1);
 				
 				password += checkData.charAt(i);
 				
