@@ -17,6 +17,7 @@
 		
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/stylesheet.css" />
 		
 	</head>
 	
@@ -63,14 +64,25 @@
 									</a>
 									
 									<ul class="dropdown-menu">
-										<li><a href="#">About WCD</a></li>
+										<li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i> About WCD</a></li>
 										<li><a href="#"><i class="fa fa-users" aria-hidden="true"></i> About The Team</a></li>
 										<li role="separator" class="divider"></li>
 										<li><a href="#">About The Sparce</a></li>
 									</ul>
 								</li>
 								
-								<li><a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle agree-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+										<i class="fa fa-code-fork" aria-hidden="true"></i> Team Resources <span class="caret"></span>
+									</a>
+									
+									<ul class="dropdown-menu">
+										<li><a href="https://wcdtalk.slack.com/"><i class="fa fa-comments" aria-hidden="true"></i> Chat</a></li>
+										<li><a href="https://trello.com/b/7b9I9P2p/wcd"><i class="fa fa-list-ol" aria-hidden="true"></i> Trello Todo List</a></li>
+									</ul>
+								</li>
+								
+								<li><a class="agree-link" href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
 								<li><a href="#"><i class="fa fa-code" aria-hidden="true"></i> Changelog</a></li>
 								
 							</ul>
@@ -83,47 +95,57 @@
 			
 		</div>
 		
-		<div class="row">
-		
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="..." alt="...">
-					<div class="caption">
-						<h3>Thumbnail label</h3>
-						<p>...</p>
-						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					</div>
-				</div>
-			</div>
+		<div id="page_body">
 			
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="..." alt="...">
-					<div class="caption">
-						<h3>Thumbnail label</h3>
-						<p>...</p>
-						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					</div>
-				</div>
-			</div>
+			<div class="row">
 			
-			<div class="col-sm-6 col-md-4">
-				<div class="thumbnail">
-					<img src="..." alt="...">
-					<div class="caption">
-						<h3>Thumbnail label</h3>
-						<p>...</p>
-						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="..." alt="...">
+						<div class="caption">
+							<h3>Thumbnail label</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
 					</div>
 				</div>
+				
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="..." alt="...">
+						<div class="caption">
+							<h3>Thumbnail label</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="..." alt="...">
+						<div class="caption">
+							<h3>Thumbnail label</h3>
+							<p>...</p>
+							<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						</div>
+					</div>
+				</div>
+				
 			</div>
 			
 		</div>
 		
+		<div id="result">UserHasAgreed: ?</div>
+		<div id="dvValue"></div>
+		
 		<!-- scripts -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/jquery.crypt.js"></script>
+		<script src="js/cookie.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/navbar/page_top.js"></script>
+		<script src="js/popupBox.js"></script>
 		
 	</body>
 	

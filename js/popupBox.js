@@ -1,0 +1,163 @@
+$('.agree-link').click(function() {
+    if(typeof(Storage) !== "undefined") {
+        if(localStorage.WCDUserHasAgreedToTerms) {
+            //localStorage.WCDUserHasAgreedToTerms = Number(localStorage.WCDUserHasAgreedToTerms)+1;
+			
+			if(localStorage.WCDUserHasAgreedToTerms == 1) {
+				LoginPrompt();
+			} else if(localStorage.WCDUserHasAgreedToTerms == 0) {
+				AgreeAlert();
+			} else if(localStorage.WCDUserHasAgreedToTerms != 0 || localStorage.WCDUserHasAgreedToTerms != 1) {
+				localStorage.WCDUserHasAgreedToTerms = 0;
+			}
+			
+        } else {
+            localStorage.WCDUserHasAgreedToTerms = 0;
+			AgreeAlert();
+        }
+        document.getElementById("result").innerHTML = "UserHasAgreed: " + localStorage.WCDUserHasAgreedToTerms;
+    } else {
+        document.getElementById("result").innerHTML = "Unable to agree! Please update your browser";
+        alert("Unable to agree! Please update your browser");
+    }
+	
+});
+
+function AgreeAlert() {
+	
+	var promptMessage = "By attempting to access any content on this site, you understand and agree that you are either a staff member of DigiPen Institute of Technology or a team member of W.C.D., Inc. You also understand that all assets/code hosted on the link you are attempting to access/visit is under copyright protection of DigiPen Institute of Technology. If you understand and agree to these terms, type \"I agree\" in the text box below exactly as shown. If you do not agree and/or are not a staff member of DigiPen Institute of Technology, or W.C.D., Inc., type anything else in the box below and leave this site immediately!";
+	
+	var agreePopup = window.prompt(promptMessage);
+	
+	if(agreePopup.toLowerCase() == "i agree") {
+		localStorage.WCDUserHasAgreedToTerms = 1;
+		LoginPrompt();
+	} else {
+		localStorage.WCDUserHasAgreedToTerms = 0;
+	}
+	
+}
+
+/**
+** YES, I KNOW THIS INSECURE! GITHUB PAGES DOESN'T ALLOW PHP SO THIS IS THE BEST I CAN DO (TO MY KNOWLEDGE)! IT IS JUST TO GET RID OF THE MAJORITY OF PEOPLE
+** SINCE THEY WILL EXPECT THIS TO BE SECURE. WE ARE HOPING THAT THE FEW WHO SEE THIS WON'T TRY TO EXPLOIT THIS. AGAIN, EVERYTHING THAT IS PASSWORD PROTECTED
+** IS OWNED BY DIGIPEN AND IT IS ILLEGAL TO TAKE THESE FILES!
+**/
+function LoginPrompt() {
+	
+	var username = window.prompt("Username");
+	var password = window.prompt("Password");
+	
+	username = EncryptText(username);
+	password = EncryptText(password);
+	
+	console.log(username);
+	console.log(password);
+	
+	CheckForMatch(username, password);
+	
+}
+
+function CheckForMatch(user, pass) {
+	
+	var fileLocation = "unsecure\usr\0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
+	
+	jQuery.get(fileLocation, function(data) {
+		alert(data);
+		//process text file line by line
+		$('#div').html(data.replace('n',''));
+	});
+	
+}
+
+function EncryptText(input) {
+	
+	//var strVal = $('#txtValue').val();
+	//dvValue
+	
+	if(input.length == 0) {
+		alert("That's not how it works...");
+	} else {
+		
+		var strMD5 = $().crypt({
+			method: "md5",
+			source: input
+		});
+		
+		var keyword = window.prompt("Enter Keyword");
+		
+		//$('#dvValue').html("MD5 string of <b>" + input + "</b> is <b>" + strMD5 + "</b>");
+		
+		return KeywordEncrypt(strMD5, keyword);
+		
+	}
+	
+}
+
+/* ENCRYPT ENCRYPTED TEXT */
+
+function KeywordEncrypt(message, key) {
+	
+	return scramble(message, key);
+	
+}
+
+var KWA = [];
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+function makeKWA(key) {
+
+	var keyword = key.toLowerCase();
+	KWA = [];
+	
+	for(var i = 0; i < keyword.length; i++) {
+		var newChar = keyword.charAt(i);
+		KWA.push(newChar);
+	}
+	
+	for(var j = 0; j < alphabet.length; j++) {
+		var letter = alphabet[j];
+		if(KWA.indexOf(letter) == -1) {
+			KWA.push(letter);
+		}
+	}
+	
+	console.log(KWA);
+	
+}
+
+function scramble(message, key) {
+
+	makeKWA(key);
+	
+	var result = "";
+	
+	var word = message;
+	
+	for(k = 0; k < word.length; k++) {
+		
+		var letter = word.charAt(k);
+		
+		if($.isNumeric(letter)) {
+			result += letter;
+			continue;
+		}
+		
+		var AAindex = alphabet.indexOf(letter);
+		var newLetter = KWA[AAindex];
+		
+		result += newLetter;
+		
+	}
+	
+	//alert(result);
+	
+	return result;
+	
+	KWA = [];
+}
+
+
+
+
+
