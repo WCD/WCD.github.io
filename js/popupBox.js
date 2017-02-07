@@ -232,8 +232,3 @@ function scramble(message, key) {
 	
 	KWA = [];
 }
-
-
-
-
-
