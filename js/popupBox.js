@@ -71,10 +71,10 @@ function CheckForMatch(user, pass) {
 		var username = "";
 		var password = "";
 		var charCount = 0;
-		var selectedChar0 = 0;
-		var selectedChar1 = 0;
+		var selectedChar0 = "";
+		var selectedChar1 = "";
 		
-		while(selectedChar0 != null || charCount <= checkData.toString().length) {
+		while(charCount <= checkData.toString().length) {
 			
 			for(var i = charCount; i < checkData.toString().length; i++) {
 				
@@ -129,6 +129,8 @@ function CheckForMatch(user, pass) {
 						console.log("Error: Check Failed!");
 					}
 					
+					charCount = i + 1;
+					
 					break;
 					
 				}
@@ -137,7 +139,6 @@ function CheckForMatch(user, pass) {
 			
 			username = "";
 			password = "";
-			charCount = selectedChar0 + 1;
 			
 		}
 		
