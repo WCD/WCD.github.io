@@ -63,7 +63,7 @@ function CheckForMatch(user, pass) {
 	var fileLocation = "unsecure/usr/0a744893951e0d1706ff74a7afccf561.40fe9ad4949331a12f5f19b477133924";
 	
 	jQuery.get(fileLocation, function(data) {
-		alert(data);
+		console.log(data);
 		//process text file line by line
 		//$('#div').html(data.replace('n',''));
 		
@@ -81,18 +81,18 @@ function CheckForMatch(user, pass) {
 			
 			if(selectedChar1 == " " && selectedChar2 == ":" && selectedChar3 == " ") {
 				
-				alert(selectedChar1);
-				alert(selectedChar2);
-				alert(selectedChar3);
+				console.log(selectedChar1);
+				console.log(selectedChar2);
+				console.log(selectedChar3);
 				
-				alert(username);
+				console.log(username);
 				
 				if(username == user) {
-					alert("Username Match!");
+					console.log("Username Match!");
 				} else if(username != user) {
-					alert("Username Invalid!");
+					console.log("Username Invalid!");
 				} else {
-					alert("Error: Check Failed!");
+					console.log("Error: Check Failed!");
 				}
 				
 				break;
