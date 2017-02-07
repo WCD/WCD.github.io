@@ -110,7 +110,7 @@ function CheckForMatch(user, pass) {
 		var selectedChar0 = "";
 		var selectedChar1 = "";
 		
-		while(userCount < 2) {
+		while(userCount < 2 && !userAndPasswordMatch) {
 			
 			usernameIsCorrect = false;
 			passwordIsCorrect = false;
@@ -184,7 +184,6 @@ function CheckForMatch(user, pass) {
 			
 			if(usernameIsCorrect && passwordIsCorrect) {
 				userAndPasswordMatch = true;
-				return true;
 			}
 			
 			username = "";
@@ -196,21 +195,21 @@ function CheckForMatch(user, pass) {
 		}
 		
 		if(userAndPasswordMatch) {
-			break;
-			return;
+			alert("true!");
+			return true;
 		} else {
-			break;
-			return;
+			alert("false!");
+			return false;
 		}
 		
 	});
 	
 	if(userAndPasswordMatch) {
 		alert("success!");
-		return;
+		return true;
 	} else {
 		alert(":(");
-		return;
+		return false;
 	}
 	
 }
