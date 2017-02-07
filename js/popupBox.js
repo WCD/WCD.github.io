@@ -60,11 +60,11 @@ function LoginPrompt() {
 	
 	//$.when(CheckForMatch(username, password)).then(CheckLogin());
 	
-	var chkForMatch = $.get(function() {
+	//var chkForMatch = $.get("", (){
 		CheckForMatch(username, password);
-	});
+	//});
 	
-	$.when(chkForMatch).done(function() {
+	$.when(funcDone).done(function() {
 		CheckLogin();
 	});
 	
