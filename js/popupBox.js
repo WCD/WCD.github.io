@@ -60,6 +60,14 @@ function LoginPrompt() {
 	
 	userAndPasswordMatch = CheckForMatch(username, password);
 	
+	if(userAndPasswordMatch) {
+		alert("Access Granted!");
+		return true;
+	} else {
+		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
+		return false;
+	}
+	
 }
 
 function CheckForMatch(user, pass) {
@@ -81,7 +89,7 @@ function CheckForMatch(user, pass) {
 		var selectedChar0 = "";
 		var selectedChar1 = "";
 		
-		while(userCount <= 2) {
+		while(userCount < 2) {
 			
 			for(var i = charCount; i < checkData.toString().length; i++) {
 				
@@ -157,28 +165,12 @@ function CheckForMatch(user, pass) {
 			username = "";
 			password = "";
 			
-			if(usernameIsCorrect && passwordIsCorrect) {
-				userAndPasswordMatch = true;
-				usrnameFuncFinished = true;
-				return true;
-			} else {
-				userAndPasswordMatch = false;
-			}
-			
 			charCount++;
 			userCount++;
 			
 		}
 		
 	});
-	
-	if(userAndPasswordMatch) {
-		alert("Access Granted!");
-		return true;
-	} else {
-		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
-		return false;
-	}
 	
 }
 
