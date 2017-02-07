@@ -61,10 +61,8 @@ function LoginPrompt() {
 	
 	if(userAndPasswordMatch) {
 		alert("Access Granted!");
-		return true;
 	} else {
 		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
-		return false;
 	}
 	
 }
@@ -206,6 +204,14 @@ function CheckForMatch(user, pass) {
 		}
 		
 	});
+	
+	if(userAndPasswordMatch) {
+		alert("success!");
+		return;
+	} else {
+		alert(":(");
+		return;
+	}
 	
 }
 
