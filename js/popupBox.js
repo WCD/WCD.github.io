@@ -1,3 +1,5 @@
+var userIsSignedInGlobal = false;
+
 $(function() {
 	if(sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in') != null) {
 		document.getElementById('user-id').innerHTML = "UserHasLoggedIn: " + sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in');
@@ -15,9 +17,14 @@ $(function() {
 		document.getElementById("username-navbar").innerHTML = "Guest";
 	}
 	
-	if(localStorage.WCD_login_access_token_key_local_is_logged_in == true) {
+	if(sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in') == true || localStorage.WCD_login_access_token_key_local_is_logged_in == true) {
+		userIsSignedInGlobal = true;
+	}
+	
+	if(localStorage.WCD_login_access_token_key_local_is_logged_in == true || userIsSignedInGlobal) {
 		$('.signin-btn').parent().append('<button type="button" class="btn btn-inverse navbar-btn signout-btn" style="right: 10px; position: absolute;" onclick="SignOut()">Sign out</button>');
-		
+		$('#login_popup').modal("hide");
+		$('#login_popup').parent().html('<div></div>');
 	}
 	
 });
@@ -27,6 +34,7 @@ SignOut = function() {
 	localStorage.WCD_login_access_token_key_local_raw = undefined;
 	localStorage.WCD_login_access_token_key_local_encrypted = undefined;
 	localStorage.WCD_login_access_token_key_local_is_logged_in = false;
+	location.reload(true);
 }
 
 $('.agree-link').click(function() {
