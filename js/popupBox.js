@@ -4,7 +4,8 @@ $('.agree-link').click(function() {
             //localStorage.WCDUserHasAgreedToTerms = Number(localStorage.WCDUserHasAgreedToTerms)+1;
 			
 			if(localStorage.WCDUserHasAgreedToTerms == 1) {
-				LoginPrompt();
+				//LoginPrompt(false, false, "", "");
+				LoginPopup();
 			} else if(localStorage.WCDUserHasAgreedToTerms == 0) {
 				AgreeAlert();
 			} else if(localStorage.WCDUserHasAgreedToTerms != 0 || localStorage.WCDUserHasAgreedToTerms != 1) {
@@ -23,7 +24,42 @@ $('.agree-link').click(function() {
 	
 });
 
-function AgreeAlert() {
+var invalidUser;
+
+$('.popup').click(function() {
+	
+	var user = $('#usrname');
+	var pass = $('#psword');
+	var userKey = $('#usr_key');
+	var passKey = $('#psw_key');
+	
+	user.on("input", function() {
+		if(user.hasClass('invalid')) {
+			user.removeClass('invalid');
+		}
+	});
+	
+	pass.on("input", function() {
+		if(pass.hasClass('invalid')) {
+			pass.removeClass('invalid');
+		}
+	});
+	
+	userKey.on("input", function() {
+		if(userKey.hasClass('invalid')) {
+			userKey.removeClass('invalid');
+		}
+	});
+	
+	passKey.on("input", function() {
+		if(passKey.hasClass('invalid')) {
+			passKey.removeClass('invalid');
+		}
+	});
+	
+});
+
+AgreeAlert = function() {
 	
 	var promptMessage = "By attempting to access any content on this site, you understand and agree that you are either a staff member of DigiPen Institute of Technology or a team member of W.C.D., Inc. You also understand that all assets/code hosted on the link you are attempting to access/visit is under copyright protection of DigiPen Institute of Technology. If you understand and agree to these terms, type \"I agree\" in the text box below exactly as shown. If you do not agree and/or are not a staff member of DigiPen Institute of Technology, or W.C.D., Inc., type anything else in the box below and leave this site immediately!";
 	
@@ -31,10 +67,64 @@ function AgreeAlert() {
 	
 	if(agreePopup.toLowerCase() == "i agree") {
 		localStorage.WCDUserHasAgreedToTerms = 1;
-		LoginPrompt();
+		//LoginPrompt(false, false, "", "");
+		LoginPopup();
 	} else {
 		localStorage.WCDUserHasAgreedToTerms = 0;
 	}
+	
+}
+
+LoginPopup = function() {
+	$('#login_popup').modal();
+}
+
+LoginPopupSubmit = function() {
+	
+	var user = $('#usrname').val();
+	var pass = $('#psword').val();
+	var userKey = $('#usr_key').val();
+	var passKey = $('#psw_key').val();
+	var rmbr = $('#remember_login');
+	var ckbx = false;
+	var isInvalid = false;
+	
+	if(rmbr.is(':checked')) {
+		ckbx = true;
+	}
+	
+	if(user == "") {
+		$('#usrname').addClass('invalid');
+		invalidUser = $('#usrname').val();
+		isInvalid = true;
+	}
+	
+	if(pass == "") {
+		$('#psword').addClass('invalid');
+		invalidUser = $('#usrname').val();
+		isInvalid = true;
+	}
+	
+	if(userKey == "") {
+		$('#usr_key').addClass('invalid');
+		invalidUser = $('#usrname').val();
+		isInvalid = true;
+	}
+	
+	if(passKey == "") {
+		$('#psw_key').addClass('invalid');
+		invalidUser = $('#usrname').val();
+		isInvalid = true;
+	}
+	
+	if(isInvalid) {
+		$('#login_popup').shake('fast');
+		isInvalid = false;
+	}
+	
+	LoginPrompt(ckbx, true, user, pass, userKey, passKey);
+	
+	//alert("Username: " + user + " UserKey: " + userKey + " Password: " + pass + " PassKey: " + passKey + " Remember Me: " + ckbx);
 	
 }
 
@@ -47,35 +137,72 @@ function AgreeAlert() {
 var userAndPasswordMatch;
 var funcDone;
 
-function LoginPrompt() {
+LoginPrompt = function(rememberUser, popupBox, user, pass, key1, key2) {
 	
-	var username = window.prompt("Username");
-	var password = window.prompt("Password");
+	var storedLogin = sessionStorage.getItem('WCD_login_access_token_key_session_encrypted');
+	var userOne = 'l7i19129i924czic68h0aaal5571z666';
+	var userTwo = '21232b297z57z5z743894z0a4z801br3';
 	
-	username = EncryptText(username);
-	password = EncryptText(password);
-	
-	console.log(username);
-	console.log(password);
-	
-	//$.when(CheckForMatch(username, password)).done(CheckLogin());
-	
-	CheckForMatch(username, password, function() {
-		CheckLogin();
-	});
+	if(storedLogin != userOne || storedLogin != userTwo || storedLogin == null) {
+		
+		var username;
+		var password;
+		var rawUsername;
+		
+		if(!popupBox) {
+			
+			username = window.prompt("Username");
+			password = window.prompt("Password");
+			
+			rawUsername = username;
+			
+			username = EncryptText(username, false);
+			password = EncryptText(password, false);
+			
+		} else if(popupBox) {
+			
+			username = user;
+			password = pass;
+			
+			rawUsername = username;
+			
+			username = EncryptText(username, true, key1);
+			password = EncryptText(password, true, key2);
+			
+		}
+		
+		console.log(username);
+		console.log(password);
+		
+		//$.when(CheckForMatch(username, password)).done(CheckLogin());
+		
+		CheckForMatch(username, password, function() {
+			CheckLogin(rawUsername, username, rememberUser);
+		});
+		
+	}
 	
 }
 
-CheckLogin = function() {
+CheckLogin = function(unencryptedUsername, encryptedUsername, rememberUser) {
 	
 	if(userAndPasswordMatch) {
 		alert("Access Granted!");
+		if(!rememberUser) {
+			sessionStorage.setItem('WCD_login_access_token_key_session_raw', unencryptedUsername);
+			sessionStorage.setItem('WCD_login_access_token_key_session_encrypted', encryptedUsername);
+		} else if(rememberUser) {
+			localStorage.setItem('WCD_login_access_token_key_local_raw', unencryptedUsername);
+			localStorage.setItem('WCD_login_access_token_key_local_encrypted', encryptedUsername);
+		}
 	} else {
 		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
+		sessionStorage.clear();
+		localStorage.WCDUserHasAgreedToTerms = 0;
 	}
 }
 
-function EncryptText(input) {
+EncryptText = function(input, enabled, keyw) {
 	
 	//var strVal = $('#txtValue').val();
 	//dvValue
@@ -89,7 +216,11 @@ function EncryptText(input) {
 			source: input
 		});
 		
-		var keyword = window.prompt("Enter Keyword");
+		var keyword = keyw;
+		
+		if(!enabled) {
+			keyword = window.prompt("Enter Keyword");
+		}
 		
 		//$('#dvValue').html("MD5 string of <b>" + input + "</b> is <b>" + strMD5 + "</b>");
 		
@@ -217,7 +348,7 @@ CheckForMatch = function(user, pass, callback) {
 
 /* ENCRYPT ENCRYPTED TEXT */
 
-function KeywordEncrypt(message, key) {
+KeywordEncrypt = function(message, key) {
 	
 	return scramble(message, key);
 	
@@ -226,7 +357,7 @@ function KeywordEncrypt(message, key) {
 var KWA = [];
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-function makeKWA(key) {
+makeKWA = function(key) {
 
 	var keyword = key.toLowerCase();
 	KWA = [];
@@ -247,7 +378,7 @@ function makeKWA(key) {
 	
 }
 
-function scramble(message, key) {
+scramble = function(message, key) {
 
 	makeKWA(key);
 	
