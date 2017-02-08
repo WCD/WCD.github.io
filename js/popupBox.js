@@ -235,6 +235,7 @@ CheckLogin = function(unencryptedUsername, encryptedUsername, rememberUser) {
 			localStorage.WCD_login_access_token_key_local_raw = unencryptedUsername;
 			localStorage.WCD_login_access_token_key_local_encrypted = encryptedUsername;
 			localStorage.WCD_login_access_token_key_local_is_logged_in = true;
+			window.location.href = "";
 		}
 	} else {
 		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
