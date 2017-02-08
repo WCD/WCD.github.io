@@ -408,3 +408,8 @@ scramble = function(message, key) {
 	
 	KWA = [];
 }
+
+
+
+
+

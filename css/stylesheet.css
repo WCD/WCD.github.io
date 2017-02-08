@@ -1,0 +1,69 @@
+/**
+ MODAL POPUP STYLES
+**/
+
+.modal-header, h4, .close {
+	background-color: teal;
+	color:white !important;
+	text-align: center;
+	font-size: 30px;
+	border: 0px solid transparent;
+}
+
+.modal-body {
+	background-color: #101010;
+	color: #eeeeee;
+}
+
+.popup {
+	background-color: #232323;
+	border: 1px solid transparent;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+.popup.btn {
+	background-color: teal;
+}
+
+.modal-footer {
+	background-color: #222222;
+	color: #eeeeee;
+	border: 0px solid transparent;
+}
+
+.input-right {
+	width: 260px;
+	position: absolute;
+	margin-top: -34px;
+	right: 15px;
+}
+
+.input-left {
+	width: 593px;
+	/*float: left;*/
+}
+
+.input-left-h {
+	/*display: inline;*/
+}
+
+.align-text {
+	float: right;
+    margin-right: calc(260px - 47px);
+}
+
+textarea:focus, input:focus, input[type]:focus {
+	border-color: rgba(0, 128, 128, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 128, 128, 0.075) inset, 0 0 8px rgba(0, 128, 128, 0.6);
+    outline: 0 none;
+}
+
+.invalid {
+	border-color: rgba(180, 0, 0, 0.8);
+    box-shadow: 0 1px 1px rgba(180, 0, 0, 0.075) inset, 0 0 8px rgba(180, 0, 0, 0.6);
+}
+
+/**
+ OTHER
+**/
