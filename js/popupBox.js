@@ -446,8 +446,6 @@ scramble = function(message, key) {
 		
 	}
 	
-	//alert(result);
-	
 	return result;
 	
 	KWA = [];
