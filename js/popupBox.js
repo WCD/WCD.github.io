@@ -1,3 +1,9 @@
+$(function() {
+	document.getElementById('user-id').innerHTML = "UserHasLoggedIn: " + sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in');
+	document.getElementById('username-id').innerHTML = "Username: " + sessionStorage.getItem('WCD_login_access_token_key_session_raw');
+	document.getElementById("result").innerHTML = "UserHasAgreed: " + localStorage.WCDUserHasAgreedToTerms;
+});
+
 $('.agree-link').click(function() {
     if(typeof(Storage) !== "undefined") {
         if(localStorage.WCDUserHasAgreedToTerms) {
@@ -187,13 +193,15 @@ LoginPrompt = function(rememberUser, popupBox, user, pass, key1, key2) {
 CheckLogin = function(unencryptedUsername, encryptedUsername, rememberUser) {
 	
 	if(userAndPasswordMatch) {
-		alert("Access Granted!");
+		console.log("Access Granted!");
 		if(!rememberUser) {
 			sessionStorage.setItem('WCD_login_access_token_key_session_raw', unencryptedUsername);
 			sessionStorage.setItem('WCD_login_access_token_key_session_encrypted', encryptedUsername);
+			sessionStorage.setItem('WCD_login_access_token_key_session_is_logged_in', true);
 		} else if(rememberUser) {
 			localStorage.setItem('WCD_login_access_token_key_local_raw', unencryptedUsername);
 			localStorage.setItem('WCD_login_access_token_key_local_encrypted', encryptedUsername);
+			localStorage.setItem('WCD_login_access_token_key_local_is_logged_in', true);
 		}
 	} else {
 		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
@@ -208,7 +216,7 @@ EncryptText = function(input, enabled, keyw) {
 	//dvValue
 	
 	if(input.length == 0) {
-		alert("That's not how it works...");
+		console.log("That's not how it works...");
 	} else {
 		
 		var strMD5 = $().crypt({
