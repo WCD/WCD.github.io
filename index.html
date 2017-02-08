@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.min.css" />
 		<link rel="stylesheet" href="css/stylesheet.css" />
+		<link rel="stylesheet" href="css/bootstrap-modal-shake.css" />
 		
 	</head>
 	
@@ -85,6 +86,8 @@
 								<li><a class="agree-link" href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a></li>
 								<li><a href="#"><i class="fa fa-code" aria-hidden="true"></i> Changelog</a></li>
 								
+								<button type="button" class="btn btn-inverse navbar-btn" data-toggle="modal" data-target="#login_popup" style="right: 10px; position: absolute;">Sign in</button>
+								
 							</ul>
 							
 						</div>
@@ -136,6 +139,55 @@
 			
 		</div>
 		
+		<div id="popups">
+			
+			<div id="login_popup" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-lg">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header" style="">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+						</div>
+						<div class="modal-body">
+							<form role="form" autocomplete="off">
+								<div class="form-group" style="">
+								
+									<label for="usrname"><span class="glyphicon glyphicon-user input-left-h"></span> Username</label>
+									<label for="usr_key" class="align-text"><span class="glyphicon glyphicon-user"></span> UEK</label>
+									
+									<input type="text" class="popup form-control input-left" id="usrname" placeholder="Enter username">
+									<input type="text" class="popup form-control input-right" id="usr_key" placeholder="Enter username encryption key">
+									
+								</div>
+								<div class="form-group">
+								
+									<label for="psword"><span class="glyphicon glyphicon-eye-open input-left-h"></span> Password</label>
+									<label for="psw_key" class="align-text"><span class="glyphicon glyphicon-user"></span> PEK</label>
+									
+									<input type="password" class="popup form-control input-left" id="psword" placeholder="Enter password">
+									<input type="text" class="popup form-control input-right" id="psw_key" placeholder="Enter password encryption key">
+									
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" value="" id="remember_login" class="popup" />Remember me</label>
+								</div>
+								<button type="submit" onclick="LoginPopupSubmit()" class="popup btn btn-inverse btn-block submit-login"><span class="glyphicon glyphicon-off"></span> Login</button>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">Cancel</button>
+							<p>Not a member? <a>Too Bad</a>!</p>
+							<p>Forgot <a href="#">Password</a>?</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+		
 		<div id="result">UserHasAgreed: ?</div>
 		<div id="dvValue"></div>
 		
@@ -146,6 +198,7 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/navbar/page_top.js"></script>
 		<script src="js/popupBox.js"></script>
+		<script src="js/bootstrap-modal-shake.js"></script>
 		
 	</body>
 	
