@@ -4,8 +4,8 @@ $(function() {
 		document.getElementById('username-id').innerHTML = "Username: " + sessionStorage.getItem('WCD_login_access_token_key_session_raw');
 		document.getElementById("result").innerHTML = "UserHasAgreed: " + localStorage.WCDUserHasAgreedToTerms;
 	} else {
-		document.getElementById('user-id').innerHTML = "UserHasLoggedIn: " + localStorage.getItem('WCD_login_access_token_key_local_is_logged_in');
-		document.getElementById('username-id').innerHTML = "Username: " + localStorage.getItem('WCD_login_access_token_key_local_raw');
+		document.getElementById('user-id').innerHTML = "UserHasLoggedIn: " + localStorage.WCD_login_access_token_key_local_is_logged_in;
+		document.getElementById('username-id').innerHTML = "Username: " + localStorage.WCD_login_access_token_key_local_raw;
 		document.getElementById("result").innerHTML = "UserHasAgreed: " + localStorage.WCDUserHasAgreedToTerms;
 	}
 });
@@ -205,14 +205,17 @@ CheckLogin = function(unencryptedUsername, encryptedUsername, rememberUser) {
 			sessionStorage.setItem('WCD_login_access_token_key_session_encrypted', encryptedUsername);
 			sessionStorage.setItem('WCD_login_access_token_key_session_is_logged_in', true);
 		} else if(rememberUser) {
-			localStorage.setItem('WCD_login_access_token_key_local_raw', unencryptedUsername);
-			localStorage.setItem('WCD_login_access_token_key_local_encrypted', encryptedUsername);
-			localStorage.setItem('WCD_login_access_token_key_local_is_logged_in', true);
+			localStorage.WCD_login_access_token_key_local_raw = unencryptedUsername;
+			localStorage.WCD_login_access_token_key_local_encrypted = encryptedUsername;
+			localStorage.WCD_login_access_token_key_local_is_logged_in = true;
 		}
 	} else {
 		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
 		sessionStorage.clear();
 		localStorage.WCDUserHasAgreedToTerms = 0;
+		localStorage.WCD_login_access_token_key_local_raw = null;
+		localStorage.WCD_login_access_token_key_local_encrypted = null;
+		localStorage.WCD_login_access_token_key_local_is_logged_in = false;
 	}
 }
 
@@ -422,3 +425,8 @@ scramble = function(message, key) {
 	
 	KWA = [];
 }
+
+
+
+
+
