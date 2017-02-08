@@ -159,9 +159,9 @@ LoginPopupSubmit = function() {
 	if(isInvalid) {
 		$('#login_popup').shake('fast');
 		isInvalid = false;
+	} else {
+		LoginPrompt(ckbx, true, user, pass, userKey, passKey);
 	}
-	
-	LoginPrompt(ckbx, true, user, pass, userKey, passKey);
 	
 	//alert("Username: " + user + " UserKey: " + userKey + " Password: " + pass + " PassKey: " + passKey + " Remember Me: " + ckbx);
 	
