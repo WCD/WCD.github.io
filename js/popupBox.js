@@ -2,8 +2,8 @@ $(function() {
 	if(sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in') != null) {
 		document.getElementById('user-id').innerHTML = "UserHasLoggedIn: " + sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in');
 		document.getElementById('username-id').innerHTML = "Username: " + sessionStorage.getItem('WCD_login_access_token_key_session_raw');
-		document.getElementById("result").innerHTML = "UserHasAgreed: " + sessionStorage.getItem('WCD_login_access_token_key_session_raw');
-		document.getElementById("username-navbar").innerHTML = localStorage.WCDUserHasAgreedToTerms;
+		document.getElementById("result").innerHTML = "UserHasAgreed: " + localStorage.WCDUserHasAgreedToTerms;
+		document.getElementById("username-navbar").innerHTML = sessionStorage.getItem('WCD_login_access_token_key_session_raw');
 	} else {
 		document.getElementById('user-id').innerHTML = "UserHasLoggedIn: " + localStorage.WCD_login_access_token_key_local_is_logged_in;
 		document.getElementById('username-id').innerHTML = "Username: " + localStorage.WCD_login_access_token_key_local_raw;
