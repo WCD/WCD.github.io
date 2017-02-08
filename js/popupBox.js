@@ -2,13 +2,32 @@ $(function() {
 	if(sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in') != null) {
 		document.getElementById('user-id').innerHTML = "UserHasLoggedIn: " + sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in');
 		document.getElementById('username-id').innerHTML = "Username: " + sessionStorage.getItem('WCD_login_access_token_key_session_raw');
-		document.getElementById("result").innerHTML = "UserHasAgreed: " + localStorage.WCDUserHasAgreedToTerms;
+		document.getElementById("result").innerHTML = "UserHasAgreed: " + sessionStorage.getItem('WCD_login_access_token_key_session_raw');
+		document.getElementById("username-navbar").innerHTML = localStorage.WCDUserHasAgreedToTerms;
 	} else {
 		document.getElementById('user-id').innerHTML = "UserHasLoggedIn: " + localStorage.WCD_login_access_token_key_local_is_logged_in;
 		document.getElementById('username-id').innerHTML = "Username: " + localStorage.WCD_login_access_token_key_local_raw;
 		document.getElementById("result").innerHTML = "UserHasAgreed: " + localStorage.WCDUserHasAgreedToTerms;
+		document.getElementById("username-navbar").innerHTML = localStorage.WCD_login_access_token_key_local_raw;
 	}
+	
+	if(document.getElementById("username-navbar").innerHTML == "undefined") {
+		document.getElementById("username-navbar").innerHTML = "Guest";
+	}
+	
+	if(localStorage.WCD_login_access_token_key_local_is_logged_in == true || sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in') == true) {
+		$('.signin-btn').parent().append('<button type="button" class="btn btn-inverse navbar-btn signout-btn" style="right: 10px; position: absolute;" onclick="SignOut()">Sign out</button>');
+		
+	}
+	
 });
+
+SignOut = function() {
+	sessionStorage.clear();
+	localStorage.WCD_login_access_token_key_local_raw = undefined;
+	localStorage.WCD_login_access_token_key_local_encrypted = undefined;
+	localStorage.WCD_login_access_token_key_local_is_logged_in = false;
+}
 
 $('.agree-link').click(function() {
     if(typeof(Storage) !== "undefined") {
@@ -425,8 +444,3 @@ scramble = function(message, key) {
 	
 	KWA = [];
 }
-
-
-
-
-
