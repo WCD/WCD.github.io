@@ -15,7 +15,7 @@ $(function() {
 		document.getElementById("username-navbar").innerHTML = "Guest";
 	}
 	
-	if(localStorage.WCD_login_access_token_key_local_is_logged_in == true || sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in') == true) {
+	if(localStorage.WCD_login_access_token_key_local_is_logged_in == true) {
 		$('.signin-btn').parent().append('<button type="button" class="btn btn-inverse navbar-btn signout-btn" style="right: 10px; position: absolute;" onclick="SignOut()">Sign out</button>');
 		
 	}
@@ -437,6 +437,8 @@ scramble = function(message, key) {
 		result += newLetter;
 		
 	}
+	
+	//alert(result);
 	
 	return result;
 	
