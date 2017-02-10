@@ -25,7 +25,7 @@ $(function() {
 		$('.signin-btn').parent().append('<button type="button" class="btn btn-inverse navbar-btn signout-btn" style="right: 10px; position: absolute;" onclick="SignOut()">Sign out</button>');
 		$('#login_popup').modal("hide");
 		$('#login_popup').parent().html('<div></div>');
-		$('.signin-btn').css({'right: 100px; position: absolute;'});
+		$('.signin-btn').css({'right': '100px', 'position': 'absolute'});
 	}
 	
 });
