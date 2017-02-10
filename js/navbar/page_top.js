@@ -9,14 +9,14 @@ $(window).scroll(function() {
     
     var scroll = $(window).scrollTop(); 
     
-    if(scroll < 401) { 
+    if(scroll < 196) { 
         
         navBar.removeClass('navbar-fixed-top');
         navBar.addClass('navbar-static-top');
         
     } 
     
-    else if(scroll >= 401) {
+    else if(scroll >= 196) {
         
         navBar.removeClass('navbar-static-top');
         navBar.addClass('navbar-fixed-top');
