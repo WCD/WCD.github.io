@@ -5,3 +5,7 @@ function calcHeight() {
 	//change the height of the iframe
 	document.getElementById('page-content').height = the_height;
 }
+
+$(function() {
+	$("#headerSlideshow").carousel();
+});

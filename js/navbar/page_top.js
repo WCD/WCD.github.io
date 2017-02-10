@@ -4,19 +4,20 @@ var scroll = 0;
 var navBar = $('.navbar.navbar-inverse');
 var navbarFixed = $('.navbar-fixed-top');
 var navbarStatic = $('.navbar-static-top');
+var headerHeight = 300;
 
 $(window).scroll(function() { 
     
     var scroll = $(window).scrollTop(); 
     
-    if(scroll < 196) { 
+    if(scroll < headerHeight + 1) { 
         
         navBar.removeClass('navbar-fixed-top');
         navBar.addClass('navbar-static-top');
         
     } 
     
-    else if(scroll >= 196) {
+    else if(scroll >= headerHeight + 1) {
         
         navBar.removeClass('navbar-static-top');
         navBar.addClass('navbar-fixed-top');
