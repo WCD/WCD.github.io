@@ -17,11 +17,11 @@ $(function() {
 		document.getElementById("username-navbar").innerHTML = "Guest";
 	}
 	
-	if(sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in') == true || localStorage.WCD_login_access_token_key_local_is_logged_in == true) {
+	if(sessionStorage.getItem('WCD_login_access_token_key_session_is_logged_in') == 'true' || localStorage.WCD_login_access_token_key_local_is_logged_in == 'true') {
 		userIsSignedInGlobal = true;
 	}
 	
-	if(localStorage.WCD_login_access_token_key_local_is_logged_in == true || userIsSignedInGlobal) {
+	if(userIsSignedInGlobal) {
 		$('.signin-btn').parent().append('<button type="button" class="btn btn-inverse navbar-btn signout-btn" style="right: 10px; position: absolute;" onclick="SignOut()">Sign out</button>');
 		$('#login_popup').modal("hide");
 		$('#login_popup').parent().html('<div></div>');
@@ -33,18 +33,18 @@ SignOut = function() {
 	sessionStorage.clear();
 	localStorage.WCD_login_access_token_key_local_raw = undefined;
 	localStorage.WCD_login_access_token_key_local_encrypted = undefined;
-	localStorage.WCD_login_access_token_key_local_is_logged_in = false;
+	localStorage.WCD_login_access_token_key_local_is_logged_in = 'false';
 	location.reload(true);
 }
 
 $('.agree-link').click(function() {
     if(typeof(Storage) !== "undefined") {
         if(localStorage.WCDUserHasAgreedToTerms) {
-            //localStorage.WCDUserHasAgreedToTerms = Number(localStorage.WCDUserHasAgreedToTerms)+1;
 			
 			if(localStorage.WCDUserHasAgreedToTerms == 1) {
-				//LoginPrompt(false, false, "", "");
-				LoginPopup();
+				if(!userIsSignedInGlobal) {
+					LoginPopup();
+				}
 			} else if(localStorage.WCDUserHasAgreedToTerms == 0) {
 				AgreeAlert();
 			} else if(localStorage.WCDUserHasAgreedToTerms != 0 || localStorage.WCDUserHasAgreedToTerms != 1) {
@@ -106,7 +106,6 @@ AgreeAlert = function() {
 	
 	if(agreePopup.toLowerCase() == "i agree") {
 		localStorage.WCDUserHasAgreedToTerms = 1;
-		//LoginPrompt(false, false, "", "");
 		LoginPopup();
 	} else {
 		localStorage.WCDUserHasAgreedToTerms = 0;
@@ -195,8 +194,8 @@ LoginPrompt = function(rememberUser, popupBox, user, pass, key1, key2) {
 			
 			rawUsername = username;
 			
-			username = EncryptText(username, false);
-			password = EncryptText(password, false);
+			username = EncryptText(username, false, 'null');
+			password = EncryptText(password, false, 'null');
 			
 		} else if(popupBox) {
 			
@@ -213,8 +212,6 @@ LoginPrompt = function(rememberUser, popupBox, user, pass, key1, key2) {
 		console.log(username);
 		console.log(password);
 		
-		//$.when(CheckForMatch(username, password)).done(CheckLogin());
-		
 		CheckForMatch(username, password, function() {
 			CheckLogin(rawUsername, username, rememberUser);
 		});
@@ -230,12 +227,13 @@ CheckLogin = function(unencryptedUsername, encryptedUsername, rememberUser) {
 		if(!rememberUser) {
 			sessionStorage.setItem('WCD_login_access_token_key_session_raw', unencryptedUsername);
 			sessionStorage.setItem('WCD_login_access_token_key_session_encrypted', encryptedUsername);
-			sessionStorage.setItem('WCD_login_access_token_key_session_is_logged_in', true);
+			sessionStorage.setItem('WCD_login_access_token_key_session_is_logged_in', 'true');
+			location.reload(true);
 		} else if(rememberUser) {
 			localStorage.WCD_login_access_token_key_local_raw = unencryptedUsername;
 			localStorage.WCD_login_access_token_key_local_encrypted = encryptedUsername;
-			localStorage.WCD_login_access_token_key_local_is_logged_in = true;
-			window.location.href = "";
+			localStorage.WCD_login_access_token_key_local_is_logged_in = 'true';
+			location.reload(true);
 		}
 	} else {
 		alert("Error: Access Denied! (Make sure you typed in your login details correctly)");
@@ -243,14 +241,12 @@ CheckLogin = function(unencryptedUsername, encryptedUsername, rememberUser) {
 		localStorage.WCDUserHasAgreedToTerms = 0;
 		localStorage.WCD_login_access_token_key_local_raw = null;
 		localStorage.WCD_login_access_token_key_local_encrypted = null;
-		localStorage.WCD_login_access_token_key_local_is_logged_in = false;
+		localStorage.WCD_login_access_token_key_local_is_logged_in = 'false';
+		$('#login_popup').shake('fast');
 	}
 }
 
 EncryptText = function(input, enabled, keyw) {
-	
-	//var strVal = $('#txtValue').val();
-	//dvValue
 	
 	if(input.length == 0) {
 		console.log("That's not how it works...");
@@ -267,8 +263,6 @@ EncryptText = function(input, enabled, keyw) {
 			keyword = window.prompt("Enter Keyword");
 		}
 		
-		//$('#dvValue').html("MD5 string of <b>" + input + "</b> is <b>" + strMD5 + "</b>");
-		
 		return KeywordEncrypt(strMD5, keyword);
 		
 	}
@@ -283,8 +277,6 @@ CheckForMatch = function(user, pass, callback) {
 	var file = $.get(fileLocation, function(data) {
 		console.log(data);
 		checkData = data;
-		//process text file line by line
-		//$('#div').html(data.replace('n',''));
 	});
 	
 	$.when(file).done(function() {
