@@ -23,7 +23,7 @@ $(document).ready(function() {
 	var file = window.location.hash;
 	var setLocation = window.location.hash.replace('#', '');
 	
-	if(setLocation != '') {
+	if(setLocation != '' && setLocation != 'About' && setLocation != 'about') {
 		$('#page-content').load(setLocation + '.html', function() {
 			
 			if(file == '#team' || file == '#thesparce' || file == '#changelog') {
