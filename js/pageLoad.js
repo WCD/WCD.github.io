@@ -46,7 +46,7 @@ $(document).ready(function() {
 	if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfilec != 'changelog') {
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
-			if(hfilec == 'index.html' || hfilec == 'index') {
+			if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfilec != 'changelog') {
 				window.history.pushState({id: hfile.toLowerCase()} + '.html', hfile.toLowerCase() + '.html', '..');
 			}
 			
