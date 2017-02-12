@@ -9,6 +9,12 @@ body {
 	margin-top: 20px;
 }
 
+#page-contentfr {
+	width: 100%;
+	/*height: 100vh;*/
+	margin-top: 20px;
+}
+
 .navbar-static-top {
 	position: absolute;
 	width: 100%;

@@ -1,9 +1,9 @@
 /*function calcHeight() {
 	//find the height of the internal page
-	var the_height = document.getElementById('page-content').contentWindow.document.body.scrollHeight;
+	var the_height = document.getElementById('page-contentfr').contentWindow.document.body.scrollHeight;
 
 	//change the height of the iframe
-	document.getElementById('page-content').height = the_height;
+	document.getElementById('page-contentfr').height = the_height;
 }*/
 
 $(function() {
@@ -22,9 +22,6 @@ $(document).ready(function() {
 		
 		var file = window.location.hash;
 		var setLocation = window.location.hash.replace('#', '');
-		
-		console.log(file);
-		console.log(setLocation);
 		
 		$('#page-content').load(setLocation + '.html', function() {
 			
