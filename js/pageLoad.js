@@ -45,7 +45,7 @@ $(document).ready(function() {
 		
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
-			if(hfilec.toLowerCase() == 'index.html') {
+			if(hfilec == 'index.html') {
 				window.history.pushState({id: hfile.toLowerCase()} + '.html', hfile.toLowerCase() + '.html', '..');
 			}
 			
