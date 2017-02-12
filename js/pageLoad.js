@@ -29,9 +29,6 @@ $(document).ready(function() {
 			if(file == '#team' || file == '#thesparce' || file == '#changelog') {
 				window.history.pushState({id: setLocation}, setLocation, setLocation);
 				removeHash();
-			} else if(file == '#about') {
-				window.history.pushState({id: 'index.html'}, 'index.html', 'about');
-				removeHash();
 			} else {
 				removeHash();
 			}
@@ -67,19 +64,25 @@ $(document).ready(function() {
 		
 		var file = $(this).data("url");
 		
-		$('#page-content').load(file.toLowerCase() + '.html', function() {
+		if(file.toLowerCase() != 'about') {
 			
-			if(file.toLowerCase() == 'home') {
-				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', '..');
-			} else {
-				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', file.toLowerCase());
-			}
+			$('#page-content').load(file.toLowerCase() + '.html', function() {
+				
+				if(file.toLowerCase() == 'home') {
+					window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', '..');
+				} else {
+					window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', file.toLowerCase());
+				}
+				
+				removeHash();
+				
+				return false;
+				
+			})
 			
-			removeHash();
-			
-			return false;
-			
-		})
+		} else if(file.toLowerCase() == 'about') {
+			window.history.pushState({id: 'index'} + '.html', 'index.html', file.toLowerCase());
+		}
 		
 	});
 	
