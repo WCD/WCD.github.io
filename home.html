@@ -6,13 +6,20 @@
 		
 		<title>Home - W.C.D.</title>
 		
+		<script>
+		
+			var page = window.location.href.split('/').slice(-1);
+			var pageName = 'home';
+			
+			if(page == pageName || page == (pageName + '.html')) {
+				window.location.href = '../' + pageName;
+			}
+			
+		</script>
+		
 	</head>
 	
 	<body>
-		
-		<script>
-			
-		</script>
 	
 		<div id="page_body">
 			
