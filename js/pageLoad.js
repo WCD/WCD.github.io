@@ -45,8 +45,8 @@ $(document).ready(function() {
 	var hfile = 'home';
 	var hfilec = window.location.pathname.split('/').slice(-1);
 	var hfileh = window.location.hash;
-		
-	if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfileh == '') {
+	
+	if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfileh == '' && hfilec != 'about') {
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
 			if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfileh == '') {
@@ -57,6 +57,10 @@ $(document).ready(function() {
 			
 			return false;
 			
+		})
+	} else if(file.toLowerCase() == 'about') {
+		$('#page-content').load('home.html#About', function() {
+			window.history.pushState({id: 'index'} + '.html#About', 'index.html#About', 'about');
 		})
 	}
 	
