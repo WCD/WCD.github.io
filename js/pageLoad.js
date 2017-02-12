@@ -62,7 +62,7 @@ $(document).ready(function() {
 	
 	fixContent = function() {
 		
-		var file = $(this).data("url");
+		var file = 'home';
 		
 		$('#page-content').load(file.toLowerCase() + '.html', function() {
 			
