@@ -44,10 +44,10 @@ $(document).ready(function() {
 	var hfilec = window.location.pathname.split('/').slice(-1);
 	var hfileh = window.location.hash;
 		
-	if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfilec != 'changelog' && hfileh == '') {
+	if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfileh == '') {
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
-			if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfilec != 'changelog') {
+			if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfileh == '') {
 				window.history.pushState({id: hfile.toLowerCase()} + '.html', hfile.toLowerCase() + '.html', '..');
 			}
 			
