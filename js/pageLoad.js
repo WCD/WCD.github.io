@@ -112,6 +112,16 @@ $(document).ready(function() {
 	
 });
 
+$('#About').load(function() {
+    urlChange();
+});
+
+urlChange = function() {
+	if(page == 'about') {
+		$('#About').gotoAnchor();
+	}
+}
+
 /*$(document).load(function() {
 	var rfile = window.location.pathname.split('/').slice(-1);
 	
