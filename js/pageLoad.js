@@ -20,6 +20,8 @@ $(document).ready(function() {
 			
 			if(file != 'home') {
 				window.history.pushState({id: file} + '.html', file + '.html', file);
+			} else {
+				window.history.pushState({id: file} + '.html', file + '.html', '');
 			}
 			
 			return false;
