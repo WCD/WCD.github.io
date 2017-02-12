@@ -26,12 +26,6 @@
 		
 		<div id="header">
 			
-			<!--<div id="wcd_text">
-				<div class="jumbotron">
-					<h1>We Can't Decide</h1>
-				</div>
-			</div>-->
-			
 			<div id="carousel" class="carousel slide" data-ride="carousel">
 				<!-- Menu -->
 				<ol class="carousel-indicators">
@@ -67,7 +61,7 @@
 					<div class="container-fluid">
 						
 						<!-- logo and title -->
-						<div class="navbar-header">
+						<div id="link-push-state" class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation_bar_collapse" aria-expanded="false">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
@@ -75,19 +69,19 @@
 								<span class="icon-bar"></span>
 							</button>
 						
-							<a class="navbar-brand" href="#">
+							<a class="navbar-brand home" href="" data-name="home">
 								<img alt="WCD" height="20" src="assets/favicon/favicon.png">
 							</a>
 							
-							<a class="navbar-brand" href="#">We Can't Decide</a>
+							<a class="navbar-brand home" href="" data-name="home">We Can't Decide</a>
 						</div>
 						
 						<!-- navbar buttons -->
 						<div id="navigation_bar_collapse" class="navbar-collapse collapse">
 							
-							<ul class="nav navbar-nav">
+							<ul id="link-push-state" class="nav navbar-nav">
 								
-								<li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
+								<li class="active"><a class="home" href="" data-name="home"><i class="fa fa-home" aria-hidden="true"></i> Home <span class="sr-only">(current)</span></a></li>
 								
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -129,6 +123,15 @@
 		</div>
 		
 		<iframe src="home.html" frameborder="0" id="page-content" onload="calcHeight()"></iframe>
+		
+		<ul class="loadContent"> 
+        <li><a href="#" data-file="home.html">bot1</a></li> 
+        <li><a href="#" data-file="file2.php">bot2</a></li> 
+    </ul> 
+
+    <div id="content"> 
+      I'm going to change
+    </div>
 		
 		<div id="popups">
 			
