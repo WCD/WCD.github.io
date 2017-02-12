@@ -43,10 +43,10 @@ $(document).ready(function() {
 	var hfile = 'home';
 	var hfilec = window.location.pathname.split('/').slice(-1);
 		
-	if(hfilec == 'index.html') {
+	if(hfilec == 'index.html' || hfilec == 'index' || hfilec == '') {
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
-			if(hfilec == 'index.html') {
+			if(hfilec == 'index.html' || hfilec == 'index') {
 				window.history.pushState({id: hfile.toLowerCase()} + '.html', hfile.toLowerCase() + '.html', '..');
 			}
 			
