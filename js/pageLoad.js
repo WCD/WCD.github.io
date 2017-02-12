@@ -41,10 +41,11 @@ $(document).ready(function() {
 $(document).ready(function() {
 	
 	var hfile = 'home';
+	var hfilec = window.location.pathname.split('/').slice(-1);
 		
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
-			if(hfile.toLowerCase() == 'home') {
+			if(hfilec.toLowerCase() == 'index.html') {
 				window.history.pushState({id: hfile.toLowerCase()} + '.html', hfile.toLowerCase() + '.html', '..');
 			}
 			
