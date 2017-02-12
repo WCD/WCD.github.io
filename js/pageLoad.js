@@ -43,6 +43,7 @@ $(document).ready(function() {
 	var hfile = 'home';
 	var hfilec = window.location.pathname.split('/').slice(-1);
 		
+	if(hfilec == 'index.html') {
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
 			if(hfilec == 'index.html') {
@@ -54,6 +55,7 @@ $(document).ready(function() {
 			return false;
 			
 		})
+	}
 	
 	$(".pushURL").click(function() {
 		
