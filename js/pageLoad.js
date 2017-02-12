@@ -26,8 +26,11 @@ $(document).ready(function() {
 	if(setLocation != '') {
 		$('#page-content').load(setLocation + '.html', function() {
 			
-			if(file == '#about' || file == '#team' || file == '#thesparce' || file == '#changelog') {
+			if(file == '#team' || file == '#thesparce' || file == '#changelog') {
 				window.history.pushState({id: setLocation}, setLocation, setLocation);
+				removeHash();
+			} else if(file == '#about') {
+				window.history.pushState({id: 'index.html'}, 'index.html', 'about');
 				removeHash();
 			} else {
 				removeHash();
