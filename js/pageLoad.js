@@ -16,7 +16,6 @@ removeHash = function() {
 
 window.onhashchange = function() { 
     removeHash();
-	urlChange();
 }
 
 $(document).ready(function() {
