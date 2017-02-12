@@ -19,10 +19,11 @@ window.onhashchange = function() {
 }
 
 $(document).ready(function() {
-		
-		var file = window.location.hash;
-		var setLocation = window.location.hash.replace('#', '');
-		
+	
+	var file = window.location.hash;
+	var setLocation = window.location.hash.replace('#', '');
+	
+	if(setLocation != '') {
 		$('#page-content').load(setLocation + '.html', function() {
 			
 			if(file == '#about' || file == '#team' || file == '#thesparce' || file == '#changelog') {
@@ -35,7 +36,8 @@ $(document).ready(function() {
 			return false;
 			
 		})
-	
+	}
+
 });
 
 $(document).ready(function() {
