@@ -61,6 +61,7 @@ $(document).ready(function() {
 	} else if(hfilec == 'about') {
 		$('#page-content').load('home.html#About', function() {
 			window.history.pushState({id: 'index'} + '.html#About', 'index.html#About', 'about');
+			urlChange();
 		})
 	}
 	
@@ -87,6 +88,7 @@ $(document).ready(function() {
 		} else if(file.toLowerCase() == 'about') {
 			$('#page-content').load('home.html#About', function() {
 				window.history.pushState({id: 'index'} + '.html', 'index.html', file.toLowerCase());
+				urlChange();
 			})
 		}
 		
