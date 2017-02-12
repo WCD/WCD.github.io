@@ -1,3 +1,137 @@
+.col-md-12 {
+    text-align: center;
+}
+
+
+.pagecontent{
+margin-top:0px;
+margin-bottom:200px;
+text-align: center;
+max-width:6000px;
+width: 100%;
+margin:0 auto;
+margin-bottom:250px;
+}
+
+.hub_button{
+padding:10px;
+width: 30%;
+display: inline-block;
+float: right;
+text-align: center;
+margin-left: 0px;
+    margin-right: 0px;
+}
+
+.hub_button img{
+opacity:0.5;
+transition: all 0.5s ease;
+text-align: center;
+}
+
+.hub_button img:hover{
+opacity:1;
+text-align: center;
+-webkit-transform:scale(1.05); /* Safari and Chrome */
+        -moz-transform:scale(1.05); /* Firefox */
+        -ms-transform:scale(1.05); /* IE 9 */
+        -o-transform:scale(1.05); /* Opera */
+         transform:scale(1.05);
+         overflow: hidden !important;
+}
+
+.copyright p{
+text-align:center;
+color:white;
+margin-top:30px;
+
+}
+.logotile{
+margin-top:30px;
+margin-bottom:30px;
+text-align: center;
+}
+
+.logotile img{
+text-align:center;
+max-width:800px;
+margin:0 auto;
+width:100%;
+}
+
+.col-xs-4 .col-md-4 {
+    text-align: center;
+}
+
+.page-outer-left {
+ background-image:none !important;
+ background-color:transparent !important;
+ display: none !important;
+ }
+
+ .page-outer-right{
+ background-image:none !important;
+ background-color:transparent !important;
+ display: none !important;
+ }
+ 
+ #site-body{
+ width:100%;
+ max-width:none !important;
+ min-width:100% !important;
+ }
+
+#section-main {
+    width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsModule {
+    width: 1250px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-md-12 .pagecontent {
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.container_table {
+    width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.m_html .newsBG {
+    background-color: #1a1a1a;
+    background-repeat: repeat-x;
+}
+
+.container_spacer {
+    height: 0px;
+}
+
+.container .container_header {
+    background-color: transparent !important;
+}
+
+.container .container_content {
+    background-color: #1a1a1a !important;
+    margin-bottom: -84px;
+    border-bottom: 5px solid;
+    border-color: darkred !important;
+    box-shadow: 0 -7px 0 #1a1a1a;
+}
+
+.container .container_body {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .container-fluid {
     padding: 60px 50px;
 }
