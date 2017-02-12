@@ -6,6 +6,17 @@
 	document.getElementById('page-contentfr').height = the_height;
 }*/
 
+$(document).ready(function() {
+	var rfile = window.location.pathname.split('/').slice(-1);
+	
+	console.log(rfile);
+	
+	if(rfile == '' || rfile == 'index' || rfile == 'index.html' || rfile == '../' || rfile == '.html') {
+		window.location.href = '#home';
+		window.history.pushState({id: rfile}, rfile, '');
+	}
+});
+
 $(function() {
 	$("#headerSlideshow").carousel();
 });
