@@ -52,7 +52,7 @@ $(document).ready(function() {
 			if(file.toLowerCase() == 'home') {
 				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', '..');
 			} else {
-				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', file);
+				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', file.toLowerCase());
 			}
 			
 			removeHash();
