@@ -40,6 +40,20 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	
+	var hfile = 'home';
+		
+		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
+			
+			if(hfile.toLowerCase() == 'home') {
+				window.history.pushState({id: hfile.toLowerCase()} + '.html', hfile.toLowerCase() + '.html', '..');
+			}
+			
+			removeHash();
+			
+			return false;
+			
+		})
+	
 	$(".pushURL").click(function() {
 		
 		var file = $(this).data("url");
@@ -68,8 +82,6 @@ $(document).ready(function() {
 			
 			if(file.toLowerCase() == 'home') {
 				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', '..');
-			} else {
-				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', file.toLowerCase());
 			}
 			
 			removeHash();
