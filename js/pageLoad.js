@@ -42,8 +42,9 @@ $(document).ready(function() {
 	
 	var hfile = 'home';
 	var hfilec = window.location.pathname.split('/').slice(-1);
+	var hfileh = window.location.hash;
 		
-	if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfilec != 'changelog') {
+	if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfilec != 'changelog' && hfileh == '') {
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
 			if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfilec != 'changelog') {
