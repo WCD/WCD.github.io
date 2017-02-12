@@ -18,7 +18,9 @@ $(document).ready(function() {
 		
 		$('#page-content').load(file + '.html', function() {
 			
-			window.history.pushState({id: file} + '.html', file + '.html', file);
+			if(file != 'home') {
+				window.history.pushState({id: file} + '.html', file + '.html', file);
+			}
 			
 			return false;
 			
