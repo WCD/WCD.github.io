@@ -62,7 +62,7 @@ $(document).ready(function() {
 	
 });
 
-$(document).load(function() {
+/*$(document).load(function() {
 	var rfile = window.location.pathname.split('/').slice(-1);
 	
 	console.log(rfile);
@@ -72,4 +72,4 @@ $(document).load(function() {
 		window.history.pushState({id: rfile}, rfile, '');
 	}
 
-});
+});*/
