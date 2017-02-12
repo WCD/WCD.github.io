@@ -58,7 +58,7 @@ $(document).ready(function() {
 			return false;
 			
 		})
-	} else if(file.toLowerCase() == 'about') {
+	} else if(hfilec.toLowerCase() == 'about') {
 		$('#page-content').load('home.html#About', function() {
 			window.history.pushState({id: 'index'} + '.html#About', 'index.html#About', 'about');
 		})
