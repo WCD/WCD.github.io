@@ -118,6 +118,10 @@ $('#About').ready(function() {
     urlChange();
 });
 
+$.fn.gotoAnchor = function(anchor) {
+    location.href = this.selector;
+}
+
 urlChange = function() {
 	
 	var page = window.location.pathname.split('/').slice(-1);
