@@ -62,7 +62,7 @@ $(document).ready(function() {
 	
 });
 
-$(document).ready(function() {
+$(document).load(function() {
 	var rfile = window.location.pathname.split('/').slice(-1);
 	
 	console.log(rfile);
