@@ -112,11 +112,14 @@ $(document).ready(function() {
 	
 });
 
-$('#About').load(function() {
+$('#About').ready(function() {
     urlChange();
 });
 
 urlChange = function() {
+	
+	var page = window.location.pathname.split('/').slice(-1);
+	
 	if(page == 'about') {
 		$('#About').gotoAnchor();
 	}
