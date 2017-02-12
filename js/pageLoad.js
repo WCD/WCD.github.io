@@ -10,22 +10,20 @@ $(function() {
 	$("#headerSlideshow").carousel();
 });
 
-var container = document.querySelector('#content');
-
-$( document ).ready(function() {
-	$( ".loadContent a" ).click(function() {
-		var file = $(this).data("file");
-		$('#content').load(file, function(){
-			window.history.pushState({id: file}, file, file);
+$(document).ready(function() {
+	
+	$("#link-push-state .pushURL").click(function() {
+		
+		var file = $(this).data("url");
+		
+		$('#page-content').load(file + '.html', function() {
+			
+			window.history.pushState({id: file} + '.html', file + '.html', file);
+			
 			return false;
+			
 		})
+		
 	});
+	
 });
-
-container.addEventListener('click', function(e) {
-  if (e.target != e.currentTarget) {
-    e.preventDefault();
-    // e.target is the image inside the link we just clicked.
-  }
-  e.stopPropagation();
-}, false);
