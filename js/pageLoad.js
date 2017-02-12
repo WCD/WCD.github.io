@@ -43,7 +43,7 @@ $(document).ready(function() {
 	var hfile = 'home';
 	var hfilec = window.location.pathname.split('/').slice(-1);
 		
-	if(hfilec == 'index.html' || hfilec == 'index' || hfilec == '') {
+	if((hfilec == 'index.html' || hfilec == 'index' || hfilec == '') && hfilec != 'changelog') {
 		$('#page-content').load(hfile.toLowerCase() + '.html', function() {
 			
 			if(hfilec == 'index.html' || hfilec == 'index') {
