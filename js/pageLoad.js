@@ -60,6 +60,26 @@ $(document).ready(function() {
 		
 	});
 	
+	fixContent = function() {
+		
+		var file = $(this).data("url");
+		
+		$('#page-content').load(file.toLowerCase() + '.html', function() {
+			
+			if(file.toLowerCase() == 'home') {
+				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', '..');
+			} else {
+				window.history.pushState({id: file.toLowerCase()} + '.html', file.toLowerCase() + '.html', file.toLowerCase());
+			}
+			
+			removeHash();
+			
+			return false;
+			
+		})
+		
+	}
+	
 });
 
 /*$(document).load(function() {
