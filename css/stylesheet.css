@@ -59,7 +59,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 .fa {
-	color: darkred;
+	color: #f4511e;
+}
+
+a {
+	color: #f4511e;
+}
+
+a:focus, a:hover {
+	color: #A93715;
 }
 
 /**
@@ -184,7 +192,7 @@ body::-webkit-scrollbar-thumb {
  MODAL POPUP STYLES
 **/
 
-.modal-header, h4, .close {
+.modal-header, .modal-header > h4, .close {
 	background-color: teal;
 	color:white !important;
 	text-align: center;
