@@ -25,8 +25,15 @@
 });*/
 
 fixScrollSpy = function(pageName) {
+	
 	$('#prependScroll').html('<div id=' + pageName + '></div>');
 	$('body').scrollspy({target: ".navbar", offset: 350});
 	
-	var file = $('#link-push-state li a').data("url");
+	$(".pushURL").click(function() {
+		
+		$('li.active').removeClass('active');
+		$(this).parent().addClass('active');
+		
+	});
+	
 }
