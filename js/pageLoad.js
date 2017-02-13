@@ -131,8 +131,6 @@ urlChange = function() {
 	}
 }
 
-$('body').scrollspy({target: ".navbar"});
-
 /*$(document).load(function() {
 	var rfile = window.location.pathname.split('/').slice(-1);
 	
