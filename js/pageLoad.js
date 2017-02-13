@@ -136,13 +136,13 @@ urlChange = function() {
 /*scrollSpy = function() {
 	scrollSpyRefresh();
 	$('body').scrollspy({target: ".navbar", offset: 350});
-}
+}*/
 
 scrollSpyRefresh = function() {
 	$('[data-spy="scroll"]').each(function () {
 		var $spy = $(this).scrollspy('refresh')
 	})
-}*/
+}
 
 /*$(document).load(function() {
 	var rfile = window.location.pathname.split('/').slice(-1);

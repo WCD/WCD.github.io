@@ -23,3 +23,11 @@
   } // End if
 
 });*/
+
+$(document).ready(function(){
+	
+	fixScrollSpy = function(pageName) {
+		$('#prependScroll').html('<div id=' + pageName + '></div>');
+		$('body').scrollspy({target: ".navbar", offset: 350});
+	}
+});
