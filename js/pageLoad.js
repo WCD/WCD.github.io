@@ -33,14 +33,10 @@ $(document).ready(function() {
 				removeHash();
 			}
 			
-			scrollSpyRefresh();
-			
 			return false;
 			
 		})
 	}
-	
-	scrollSpyRefresh();
 
 });
 
@@ -58,7 +54,6 @@ $(document).ready(function() {
 			}
 			
 			removeHash();
-			scrollSpyRefresh();
 			
 			return false;
 			
@@ -68,7 +63,6 @@ $(document).ready(function() {
 			window.history.pushState({id: 'index'} + '.html#About', 'index.html#About', 'about');
 			urlChange();
 		})
-		scrollSpyRefresh();
 	}
 	
 	$(".pushURL").click(function() {
@@ -86,7 +80,6 @@ $(document).ready(function() {
 				}
 				
 				removeHash();
-				scrollSpyRefresh();
 				
 				return false;
 				
@@ -96,11 +89,8 @@ $(document).ready(function() {
 			$('#page-content').load('home.html#About', function() {
 				window.history.pushState({id: 'index'} + '.html', 'index.html#About', 'about');
 				urlChange();
-				scrollSpyRefresh();
 			})
 		}
-		
-		scrollSpyRefresh();
 		
 	});
 	
@@ -115,13 +105,10 @@ $(document).ready(function() {
 			}
 			
 			removeHash();
-			scrollSpyRefresh();
 			
 			return false;
 			
 		})
-		
-		scrollSpyRefresh();
 		
 	}
 	
@@ -143,20 +130,18 @@ urlChange = function() {
 		$('#About').gotoAnchor();
 	}
 	
-	scrollSpyRefresh();
-	
 }
 
-scrollSpy = function() {
+/*scrollSpy = function() {
 	scrollSpyRefresh();
+	$('body').scrollspy({target: ".navbar", offset: 350});
 }
 
 scrollSpyRefresh = function() {
 	$('[data-spy="scroll"]').each(function () {
-		var $spy = $(this).scrollspy('refresh');
-		$('body').scrollspy({target: ".navbar", offset: 350});
+		var $spy = $(this).scrollspy('refresh')
 	})
-}
+}*/
 
 /*$(document).load(function() {
 	var rfile = window.location.pathname.split('/').slice(-1);
