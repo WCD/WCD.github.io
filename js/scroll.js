@@ -24,10 +24,9 @@
 
 });*/
 
-$(document).ready(function(){
+fixScrollSpy = function(pageName) {
+	$('#prependScroll').html('<div id=' + pageName + '></div>');
+	$('body').scrollspy({target: ".navbar", offset: 350});
 	
-	fixScrollSpy = function(pageName) {
-		$('#prependScroll').html('<div id=' + pageName + '></div>');
-		$('body').scrollspy({target: ".navbar", offset: 350});
-	}
-});
+	var file = $('#link-push-state li a').data("url");
+}
