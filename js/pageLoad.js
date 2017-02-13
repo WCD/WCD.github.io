@@ -12,7 +12,6 @@ $(function() {
 
 removeHash = function() { 
 	history.pushState("", document.title, window.location.pathname + window.location.search);
-	scrollSpy();
 }
 
 window.onhashchange = function() { 
@@ -34,10 +33,14 @@ $(document).ready(function() {
 				removeHash();
 			}
 			
+			scrollSpyRefresh();
+			
 			return false;
 			
 		})
 	}
+	
+	scrollSpyRefresh();
 
 });
 
@@ -55,6 +58,7 @@ $(document).ready(function() {
 			}
 			
 			removeHash();
+			scrollSpyRefresh();
 			
 			return false;
 			
@@ -64,6 +68,7 @@ $(document).ready(function() {
 			window.history.pushState({id: 'index'} + '.html#About', 'index.html#About', 'about');
 			urlChange();
 		})
+		scrollSpyRefresh();
 	}
 	
 	$(".pushURL").click(function() {
@@ -81,6 +86,7 @@ $(document).ready(function() {
 				}
 				
 				removeHash();
+				scrollSpyRefresh();
 				
 				return false;
 				
@@ -90,8 +96,11 @@ $(document).ready(function() {
 			$('#page-content').load('home.html#About', function() {
 				window.history.pushState({id: 'index'} + '.html', 'index.html#About', 'about');
 				urlChange();
+				scrollSpyRefresh();
 			})
 		}
+		
+		scrollSpyRefresh();
 		
 	});
 	
@@ -106,10 +115,13 @@ $(document).ready(function() {
 			}
 			
 			removeHash();
+			scrollSpyRefresh();
 			
 			return false;
 			
 		})
+		
+		scrollSpyRefresh();
 		
 	}
 	
@@ -130,10 +142,17 @@ urlChange = function() {
 	if(page == 'about') {
 		$('#About').gotoAnchor();
 	}
+	
+	scrollSpyRefresh();
+	
 }
 
 scrollSpy = function() {
 	$('body').scrollspy({target: ".navbar", offset: 350});
+	scrollSpyRefresh();
+}
+
+scrollSpyRefresh = function() {
 	$('[data-spy="scroll"]').each(function () {
 		var $spy = $(this).scrollspy('refresh')
 	})
