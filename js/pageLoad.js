@@ -148,7 +148,6 @@ urlChange = function() {
 }
 
 scrollSpy = function() {
-	$('body').scrollspy({target: ".navbar", offset: 350});
 	scrollSpyRefresh();
 }
 
@@ -156,6 +155,7 @@ scrollSpyRefresh = function() {
 	$('[data-spy="scroll"]').each(function () {
 		var $spy = $(this).scrollspy('refresh')
 	})
+	$('body').scrollspy({target: ".navbar", offset: 350});
 }
 
 /*$(document).load(function() {
