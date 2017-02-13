@@ -20,7 +20,7 @@
 		
 	</head>
 	
-	<body data-spy="scroll" data-target=".navbar" data-offset="351">
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		
 		<div id="header">
 			
@@ -115,7 +115,7 @@
 			
 		</div>
 		
-		<div id="page-content">
+		<div id="page-content" data-spy="affix" data-offset-top="300">
 			<title>Home - W.C.D.</title>
 			<h2 style="text-align: center;">Loading...</h2>
 		</div>
@@ -195,12 +195,7 @@
 		
 		<script>
 			
-			$(document).ready(function() {
-				$('body').scrollspy({
-					target: ".navbar",
-					offset: 351
-				});
-			});
+			
 			
 		</script>
 		
