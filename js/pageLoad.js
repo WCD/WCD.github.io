@@ -12,6 +12,7 @@ $(function() {
 
 removeHash = function() { 
 	history.pushState("", document.title, window.location.pathname + window.location.search);
+	scrollSpy();
 }
 
 window.onhashchange = function() { 
@@ -129,6 +130,10 @@ urlChange = function() {
 	if(page == 'about') {
 		$('#About').gotoAnchor();
 	}
+}
+
+scrollSpy = function() {
+	$('body').scrollspy({target: ".navbar", offset: 350});
 }
 
 /*$(document).load(function() {
