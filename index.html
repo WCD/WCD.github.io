@@ -23,96 +23,101 @@
 	<body>
 		
 		<div id="prependScroll"></div>
-		<div id="header">
+		
+		<div id="inner-body">
 			
-			<div id="carousel" class="carousel slide" data-ride="carousel">
-				<!-- Menu -->
-				<ol class="carousel-indicators">
-					<li data-target="#carousel" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel" data-slide-to="1"></li>
-					<li data-target="#carousel" data-slide-to="2"></li>
-				</ol>
+			<div id="header">
+				
+				<div id="carousel" class="carousel slide" data-ride="carousel">
+					<!-- Menu -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel" data-slide-to="1"></li>
+						<li data-target="#carousel" data-slide-to="2"></li>
+					</ol>
 
-				<!-- Items -->
-				<div class="carousel-inner">
+					<!-- Items -->
+					<div class="carousel-inner">
 
-					<div class="item active">
-						<img src="assets/placeholder.png" alt="Slide 1" />
-					</div>
-					<div class="item">
-						<img src="assets/placeholder.png" alt="Slide 2" />
-					</div>
-					<div class="item">
-						<img src="assets/placeholder.png" alt="Slide 3" />
+						<div class="item active">
+							<img src="assets/placeholder.png" alt="Slide 1" />
+						</div>
+						<div class="item">
+							<img src="assets/placeholder.png" alt="Slide 2" />
+						</div>
+						<div class="item">
+							<img src="assets/placeholder.png" alt="Slide 3" />
+						</div>
 					</div>
 				</div>
-			</div>
-			
-			<div id="navigation_bar">
-				<nav class="navbar navbar-inverse navbar-static-top">
-					<div class="container-fluid">
-						
-						<!-- logo and title -->
-						<div id="link-push-state" class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation_bar_collapse" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-						
-							<a class="navbar-brand pushURL" href="#Home" data-url="Home">
-								<img alt="WCD" height="20" src="assets/favicon/favicon.png">
-							</a>
+				
+				<div id="navigation_bar">
+					<nav class="navbar navbar-inverse navbar-static-top">
+						<div class="container-fluid">
 							
-							<a class="navbar-brand pushURL" href="#Home" data-url="Home">We Can't Decide</a>
-						</div>
-						
-						<!-- navbar buttons -->
-						<div id="navigation_bar_collapse" class="navbar-collapse collapse">
+							<!-- logo and title -->
+							<div id="link-push-state" class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation_bar_collapse" aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
 							
-							<ul id="link-push-state" class="nav navbar-nav">
+								<a class="navbar-brand pushURL" href="#Home" data-url="Home">
+									<img alt="WCD" height="20" src="assets/favicon/favicon.png">
+								</a>
 								
-								<!--class="active"-->
-								<!--<span class="sr-only">(current)</span>-->
+								<a class="navbar-brand pushURL" href="#Home" data-url="Home">We Can't Decide</a>
+							</div>
+							
+							<!-- navbar buttons -->
+							<div id="navigation_bar_collapse" class="navbar-collapse collapse">
 								
-								<li><a class="pushURL" href="#Home" data-url="home"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
-								
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-										<i class="fa fa-info" aria-hidden="true"></i> About <span class="caret"></span>
-									</a>
+								<ul id="link-push-state" class="nav navbar-nav">
 									
-									<ul class="dropdown-menu">
-										<li><a class="pushURL" href="#About" data-url="About"><i class="fa fa-info-circle" aria-hidden="true"></i> About WCD </a></li>
-										<li><a class="pushURL" href="#Team" data-url="Team"><i class="fa fa-users" aria-hidden="true"></i> About The Team </a></li>
-										<li role="separator" class="divider"></li>
-										<li><a class="pushURL" href="#TheSparce" data-url="TheSparce"> About The Sparce </a></li>
-									</ul>
-								</li>
-								
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle agree-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-										<i class="fa fa-code-fork" aria-hidden="true"></i> Team Resources <span class="caret"></span>
-									</a>
+									<!--class="active"-->
+									<!--<span class="sr-only">(current)</span>-->
 									
-									<ul class="dropdown-menu">
-										<li><a href="https://wcdtalk.slack.com/"><i class="fa fa-comments" aria-hidden="true"></i> Chat </a></li>
-										<li><a href="https://trello.com/b/7b9I9P2p/wcd"><i class="fa fa-list-ol" aria-hidden="true"></i> Trello Todo List </a></li>
-									</ul>
-								</li>
+									<li><a class="pushURL" href="#Home" data-url="home"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+									
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+											<i class="fa fa-info" aria-hidden="true"></i> About <span class="caret"></span>
+										</a>
+										
+										<ul class="dropdown-menu">
+											<li><a class="pushURL" href="#About" data-url="About"><i class="fa fa-info-circle" aria-hidden="true"></i> About WCD </a></li>
+											<li><a class="pushURL" href="#Team" data-url="Team"><i class="fa fa-users" aria-hidden="true"></i> About The Team </a></li>
+											<li role="separator" class="divider"></li>
+											<li><a class="pushURL" href="#TheSparce" data-url="TheSparce"> About The Sparce </a></li>
+										</ul>
+									</li>
+									
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle agree-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+											<i class="fa fa-code-fork" aria-hidden="true"></i> Team Resources <span class="caret"></span>
+										</a>
+										
+										<ul class="dropdown-menu">
+											<li><a href="https://wcdtalk.slack.com/"><i class="fa fa-comments" aria-hidden="true"></i> Chat </a></li>
+											<li><a href="https://trello.com/b/7b9I9P2p/wcd"><i class="fa fa-list-ol" aria-hidden="true"></i> Trello Todo List </a></li>
+										</ul>
+									</li>
+									
+									<li><a class="agree-link" href="#"><i class="fa fa-download" aria-hidden="true"></i> Download </a></li>
+									<li><a class="pushURL" href="#Changelog" data-url="Changelog"><i class="fa fa-code" aria-hidden="true"></i> Changelog </a></li>		
+								</ul>
 								
-								<li><a class="agree-link" href="#"><i class="fa fa-download" aria-hidden="true"></i> Download </a></li>
-								<li><a class="pushURL" href="#Changelog" data-url="Changelog"><i class="fa fa-code" aria-hidden="true"></i> Changelog </a></li>		
-							</ul>
-							
-							<p class="navbar-text navbar-right">Signed in as <a href="#" id="username-navbar" class="navbar-link">Guest</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-							<button type="button" class="btn btn-inverse navbar-btn signin-btn" data-toggle="modal" data-target="#login_popup" style="right: 10px; position: absolute;">Sign in</button>
+								<p class="navbar-text navbar-right">Signed in as <a href="#" id="username-navbar" class="navbar-link">Guest</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+								<button type="button" class="btn btn-inverse navbar-btn signin-btn" data-toggle="modal" data-target="#login_popup" style="right: 10px; position: absolute;">Sign in</button>
+								
+							</div>
 							
 						</div>
-						
-					</div>
-				</nav>
+					</nav>
+				</div>
+				
 			</div>
 			
 		</div>
