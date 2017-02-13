@@ -27,7 +27,7 @@
 fixScrollSpy = function(pageName) {
 	
 	$('#prependScroll').html('<div id=' + pageName + '></div>');
-	$('#inner-body').scrollspy({target: ".navbar", offset: 350});
+	$('body').scrollspy({target: ".navbar", offset: 350});
 	
 	$(".pushURL").click(function() {
 		
