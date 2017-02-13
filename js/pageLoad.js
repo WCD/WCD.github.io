@@ -132,6 +132,7 @@ urlChange = function() {
 	
 }
 
+
 /*scrollSpy = function() {
 	scrollSpyRefresh();
 	$('body').scrollspy({target: ".navbar", offset: 350});
