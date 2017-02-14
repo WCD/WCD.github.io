@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		
+		<title>Spreadsheet - W.C.D.</title>
+		
+		<script>
+		
+			var page = window.location.href.split('/').slice(-1);
+			var pageName = 'spreadsheet';
+			
+			if(page == pageName || page == (pageName + '.html')) {
+				window.location.href = '../#' + pageName;
+			}
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<div id="Spreadsheet">
+			<h1>Spreadsheet</h1>
+			<iframe src="https://docs.google.com/spreadsheets/d/1QkOxRoyAv1xFAa29t6NQCeOrM2RF1qdWaFJGVMzBZtY/edit#gid=0&fvid=458905707">Spreadsheet</iframe>
+		</div>
+		
+		<script src="js/scroll.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				fixScrollSpy('Spreadsheet');
+			});
+		</script>
+		
+	</body>
+	
+</html>
