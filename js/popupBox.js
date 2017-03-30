@@ -182,6 +182,7 @@ LoginPrompt = function(rememberUser, popupBox, user, pass, key1, key2) {
 	var userOne 	= 'l7i19129i924czic68h0aaal5571z666';
 	var userTwo 	= '21232b297z57z5z743894z0a4z801br3';
 	var userThree 	= '6t27626r36e5m87e047h5m9mm88606i5';
+	var userFour 	= '54em05568s5307a72a96392att0a766m';
 	
 	if(storedLogin != userOne || storedLogin != userTwo || storedLogin != userThree || storedLogin == null) {
 		
@@ -292,7 +293,7 @@ CheckForMatch = function(user, pass, callback) {
 		var selectedChar0 = "";
 		var selectedChar1 = "";
 		
-		while(userCount < 3 && !userAndPasswordMatch) {
+		while(userCount < 4 && !userAndPasswordMatch) {
 			
 			usernameIsCorrect = false;
 			passwordIsCorrect = false;
