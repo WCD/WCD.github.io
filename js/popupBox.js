@@ -314,7 +314,7 @@ CheckForMatch = function(user, pass, callback) {
 					console.log(selectedChar3);
 					
 					console.log(username);
-					console.log("Entered User: " + user);
+					//console.log("Entered User: " + user);
 					
 					if(username == user) {
 						console.log("Username Match!");
@@ -345,7 +345,7 @@ CheckForMatch = function(user, pass, callback) {
 					console.log(selectedChar1);
 					
 					console.log(password);
-					console.log("Entered Pass: " + pass);
+					//console.log("Entered Pass: " + pass);
 					
 					if(password == pass) {
 						console.log("Password Match!");
