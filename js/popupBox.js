@@ -179,10 +179,11 @@ var funcDone;
 LoginPrompt = function(rememberUser, popupBox, user, pass, key1, key2) {
 	
 	var storedLogin = sessionStorage.getItem('WCD_login_access_token_key_session_encrypted');
-	var userOne = 'l7i19129i924czic68h0aaal5571z666';
-	var userTwo = '21232b297z57z5z743894z0a4z801br3';
+	var userOne 	= 'l7i19129i924czic68h0aaal5571z666';
+	var userTwo 	= '21232b297z57z5z743894z0a4z801br3';
+	var userThree 	= '6t27626r36e5m87e047h5m9mm88606i5';
 	
-	if(storedLogin != userOne || storedLogin != userTwo || storedLogin == null) {
+	if(storedLogin != userOne || storedLogin != userTwo || storedLogin != userThree || storedLogin == null) {
 		
 		var username;
 		var password;
@@ -291,7 +292,7 @@ CheckForMatch = function(user, pass, callback) {
 		var selectedChar0 = "";
 		var selectedChar1 = "";
 		
-		while(userCount < 2 && !userAndPasswordMatch) {
+		while(userCount < 3 && !userAndPasswordMatch) {
 			
 			usernameIsCorrect = false;
 			passwordIsCorrect = false;
@@ -313,6 +314,7 @@ CheckForMatch = function(user, pass, callback) {
 					console.log(selectedChar3);
 					
 					console.log(username);
+					console.log("Entered User: " + user);
 					
 					if(username == user) {
 						console.log("Username Match!");
@@ -343,6 +345,7 @@ CheckForMatch = function(user, pass, callback) {
 					console.log(selectedChar1);
 					
 					console.log(password);
+					console.log("Entered Pass: " + pass);
 					
 					if(password == pass) {
 						console.log("Password Match!");
