@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		
+		<title>Changelog</title>
+		
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex, nofollow" />
+		
+		<link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+		<link rel="icon" type="image/png" href="../assets/favicon/favicon.png" />
+		
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../css/stylesheet.css" />
+		<link rel="stylesheet" href="../css/bootstrap-modal-shake.css" />
+		
+	</head>
+	
+	<body>
+	
+		<div id="header">
+			<div id="navigation_bar">
+				<nav class="navbar navbar-inverse navbar-fixed-top">
+					<div class="container-fluid">
+						
+						<!-- logo and title -->
+						<div id="link-push-state" class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation_bar_collapse" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						
+							<a class="navbar-brand pushURL" href="/" data-url="Home">
+								<img alt="WCD" height="20" src="../assets/favicon/favicon.png">
+							</a>
+							
+							<a class="navbar-brand pushURL" href="/" data-url="Home">We Can't Decide</a>
+						</div>
+						
+						<!-- navbar buttons -->
+						<div id="navigation_bar_collapse" class="navbar-collapse collapse">
+							
+							<ul id="link-push-state" class="nav navbar-nav">
+								
+								<!--class="active"-->
+								<!--<span class="sr-only">(current)</span>-->
+								
+								<li><a class="pushURL" href="/" data-url="home"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+										<i class="fa fa-info" aria-hidden="true"></i> About <span class="caret"></span>
+									</a>
+									
+									<ul class="dropdown-menu">
+										<li><a class="pushURL" href="/about" data-url="About"><i class="fa fa-info-circle" aria-hidden="true"></i> About WCD </a></li>
+										<li><a class="pushURL" href="/team" data-url="Team"><i class="fa fa-users" aria-hidden="true"></i> About The Team </a></li>
+										<li role="separator" class="divider"></li>
+										<li><a class="pushURL" href="/TheSparce" data-url="TheSparce"> About The Sparce </a></li>
+									</ul>
+								</li>
+								
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle agree-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+										<i class="fa fa-code-fork" aria-hidden="true"></i> Team Resources <span class="caret"></span>
+									</a>
+									
+									<ul class="dropdown-menu">
+										<li><a target="_blank" href="https://wcdtalk.slack.com/"><i class="fa fa-comments" aria-hidden="true"></i> Chat </a></li>
+										<li><a target="_blank" href="https://trello.com/b/7b9I9P2p/wcd"><i class="fa fa-list-ol" aria-hidden="true"></i> Trello Todo List </a></li>
+										<li><a class="pushURL" href="/spreadsheet" data-url="Spreadsheet"><i class="fa fa-list-ol" aria-hidden="true"></i> Asset Spreadsheet </a></li>
+									</ul>
+								</li>
+								
+								<li><a class="agree-link" href="#"><i class="fa fa-download" aria-hidden="true"></i> Download </a></li>
+								<li><a class="pushURL" href="/changelog" data-url="Changelog"><i class="fa fa-code" aria-hidden="true"></i> Changelog </a></li>		
+							</ul>
+							
+							<p class="navbar-text navbar-right">Signed in as <a href="#" id="username-navbar" class="navbar-link">Guest</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+							<button type="button" class="btn btn-inverse navbar-btn signin-btn" data-toggle="modal" data-target="#login_popup" style="right: 10px; position: absolute;">Sign in</button>
+							
+						</div>
+						
+					</div>
+				</nav>
+			</div>
+		</div>
+		
+		<footer class="text-muted">
+			<div class="container">
+				<p class="float-right">
+					<a href="#">Back to top</a>
+				</p>
+				<p>Copyright © 2017 W.C.D. Inc. All rights reserved!</p>
+				<p>Developed and Created by <a href="http://mcbudder.com/">Hudson Green</a>.</p>
+			</div>
+		</footer>
+		
+		<div id="popups">
+			
+			<div id="login_popup" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-lg">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header" style="">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+						</div>
+						<div class="modal-body">
+							<form role="form" autocomplete="on">
+								<div class="form-group" style="">
+								
+									<label for="usrname"><span class="glyphicon glyphicon-user input-left-h"></span> Username</label>
+									<label for="usr_key" class="align-text"><span class="glyphicon glyphicon-user"></span> UEK</label>
+									
+									<input type="text" class="popup form-control input-left" id="usrname" placeholder="Enter username">
+									<input type="text" class="popup form-control input-right" id="usr_key" placeholder="Enter username encryption key">
+									
+								</div>
+								<div class="form-group">
+								
+									<label for="psword"><span class="glyphicon glyphicon-eye-open input-left-h"></span> Password</label>
+									<label for="psw_key" class="align-text"><span class="glyphicon glyphicon-user"></span> PEK</label>
+									
+									<input type="password" class="popup form-control input-left" id="psword" placeholder="Enter password">
+									<input type="text" class="popup form-control input-right" id="psw_key" placeholder="Enter password encryption key">
+									
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" value="" id="remember_login" class="popup" />Remember me</label>
+								</div>
+								<input type="button" value="Login" onclick="LoginPopupSubmit()" class="popup btn btn-inverse btn-block submit-login"><!--<span class="glyphicon glyphicon-off"></span> Login--></input>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">Cancel</button>
+							<p>Not a member? <a>Too Bad</a>!</p>
+							<p>Forgot <a href="#">Password</a>?</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+		
+		<!-- scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="../js/jquery.crypt.js"></script>
+		<script src="../js/cookie.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/navbar/page_top.js"></script>
+		<script src="../js/popupBox.js"></script>
+		<script src="../js/bootstrap-modal-shake.js"></script>
+		<script src="../js/pageLoad.js"></script>
+		<script src="../js/scroll.js"></script>
+		
+	</body>
+	
+</html>
