@@ -270,15 +270,23 @@ footer {
 
 footer p {
 	margin-bottom: .25rem;
+	font-size: 20px;
 }
 
 .crappyright-icon {
-	width: 15px;
-	height: 15px;
-	line-height: 15px;
+	margin-bottom: -2px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
 	font-size: 15px;
-	border: 1px solid #AAA;
+	border: 1.5px solid #999;
 	border-radius: 50%;
+}
+
+.crappyright-icon > label {
+	position: absolute;
+	margin-top: -2px;
+	margin-left: -1px;
 }
 
 .float-right {
