@@ -276,9 +276,8 @@ footer p {
 	width: 15px;
 	height: 15px;
 	line-height: 15px;
-	color: #FFF;
 	font-size: 15px;
-	border: 1px solid #FFF;
+	border: 1px solid #AAA;
 	border-radius: 50%;
 }
 
