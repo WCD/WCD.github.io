@@ -263,18 +263,18 @@ textarea:focus, input:focus, input[type]:focus {
 **/
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  background-color: #111;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	background-color: #111;
 }
 
 footer p {
-  margin-bottom: .25rem;
+	margin-bottom: .25rem;
 }
 
 .crappyright-icon {
-  width: 20px;
-  height: 20px;
+	width: 20px;
+	height: 20px;
 	border: 1px solid #000;
 	border-radius: 50%;
 }
