@@ -273,9 +273,12 @@ footer p {
 }
 
 .crappyright-icon {
-	width: 20px;
-	height: 20px;
-	border: 1px solid #000;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	color: #FFF;
+	font-size: 15px;
+	border: 1px solid #FFF;
 	border-radius: 50%;
 }
 
