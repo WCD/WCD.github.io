@@ -150,6 +150,11 @@ a:focus, a:hover {
     height: 300px;
 }
 
+.carousel-indicators {
+	margin-top: 250px;
+	bottom: auto;
+}
+
 .carousel-indicators li {
 	position: relative;
 	-webkit-box-flex: 1;
@@ -182,8 +187,10 @@ a:focus, a:hover {
     top: 0;
     left: 0;
     min-width: 100%;
-    height: 300px;
+    width: 100%;
+    /*height: 300px;*/
 }
+
 @media (min-width: 768px) {
     .carousel-caption p {
         margin-bottom: 20px;
